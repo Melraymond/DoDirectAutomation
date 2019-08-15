@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190619 09:07:08.781" rpa="false">
+<suite id="s1" name="GoDirectSuite1" source="C:\Users\Testlab\Desktop\tools\eclipse_2019\GoDirectProject1\GDTest\GoDirectSuite1.robot">
+<test id="s1-t1" name="usb_smoke_test_1_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Smoke test verifies we can connect a USB GDX-TMP sensor</arg>
+</arguments>
+<msg timestamp="20190619 09:07:08.830" level="INFO">Smoke test verifies we can connect a USB GDX-TMP sensor</msg>
+<status status="PASS" starttime="20190619 09:07:08.830" endtime="20190619 09:07:08.830"></status>
+</kw>
+<kw name="Choose Usb" library="usbportfeed">
+<arguments>
+<arg>${port_1_gdx_tmp}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:08.830" endtime="20190619 09:07:08.831"></status>
+</kw>
+<kw name="Open Usb" library="gdx">
+<doc>Discovers the Go Direct device with a USB connection and opens that device 
+for data collection. If there are multiple devices discovered, a list of devices 
+is printed to the terminal with a prompt for the user to choose one.</doc>
+<msg timestamp="20190619 09:07:08.983" level="INFO">Device status:</msg>
+<msg timestamp="20190619 09:07:08.984" level="INFO">  Status: 0</msg>
+<msg timestamp="20190619 09:07:08.984" level="INFO">  Master FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:08.985" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:08.985" level="INFO">  Battery percent: 90%</msg>
+<msg timestamp="20190619 09:07:08.985" level="INFO">  Charger state: 1</msg>
+<msg timestamp="20190619 09:07:08.989" level="INFO">Device info:</msg>
+<msg timestamp="20190619 09:07:08.990" level="INFO">  Description: Go Direct™ Temperature Probe</msg>
+<msg timestamp="20190619 09:07:08.990" level="INFO">  Order code: GDX-TMP</msg>
+<msg timestamp="20190619 09:07:08.990" level="INFO">  Serial number: 0F1024D5</msg>
+<msg timestamp="20190619 09:07:08.991" level="INFO">  Device name: GDX-TMP 0F1024D5</msg>
+<msg timestamp="20190619 09:07:08.991" level="INFO">  Mfg ID: 8</msg>
+<msg timestamp="20190619 09:07:08.991" level="INFO">  Mfg Date: 10/6/2017</msg>
+<msg timestamp="20190619 09:07:08.991" level="INFO">  Master FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:08.992" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:08.992" level="INFO">  BLE address: 00:0b:57:4f:0e:4b</msg>
+<msg timestamp="20190619 09:07:08.992" level="INFO">  NVRAM size: 8192bytes</msg>
+<msg timestamp="20190619 09:07:08.992" level="INFO">Number of usb devices found = 2
+1: Go Direct Sensor USB 
+2: Go Direct Sensor USB 
+Select one device:USB Device successfully opened =  True</msg>
+<status status="PASS" starttime="20190619 09:07:08.832" endtime="20190619 09:07:08.992"></status>
+</kw>
+<kw name="check_usb_temp_probe_KW">
+<doc>Fails keyword if specific Temperature Probe not on correct USB Port</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:08.996" level="INFO">${InformationList} = ['GDX-TMP 0F1024D5', 'Go Direct™ Temperature Probe', 90, 'Charging', '']</msg>
+<status status="PASS" starttime="20190619 09:07:08.995" endtime="20190619 09:07:08.996"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${USB_GDX-TMP}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:08.996" endtime="20190619 09:07:08.997"></status>
+</kw>
+<status status="PASS" starttime="20190619 09:07:08.994" endtime="20190619 09:07:08.998"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<status status="PASS" starttime="20190619 09:07:08.999" endtime="20190619 09:07:09.006"></status>
+</kw>
+<tags>
+<tag>usb_smoke</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:08.829" endtime="20190619 09:07:09.007" critical="yes"></status>
+</test>
+<test id="s1-t2" name="usb_smoke_test_2_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Smoke test verifies we can connect a USB GDX-FOR sensor</arg>
+</arguments>
+<msg timestamp="20190619 09:07:09.015" level="INFO">Smoke test verifies we can connect a USB GDX-FOR sensor</msg>
+<status status="PASS" starttime="20190619 09:07:09.014" endtime="20190619 09:07:09.015"></status>
+</kw>
+<kw name="Choose Usb" library="usbportfeed">
+<arguments>
+<arg>${port_2_gdx_for}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:09.017" endtime="20190619 09:07:09.019"></status>
+</kw>
+<kw name="Open Usb" library="gdx">
+<doc>Discovers the Go Direct device with a USB connection and opens that device 
+for data collection. If there are multiple devices discovered, a list of devices 
+is printed to the terminal with a prompt for the user to choose one.</doc>
+<msg timestamp="20190619 09:07:09.040" level="INFO">Device status:</msg>
+<msg timestamp="20190619 09:07:09.040" level="INFO">  Status: 0</msg>
+<msg timestamp="20190619 09:07:09.041" level="INFO">  Master FW version: 4.2.0</msg>
+<msg timestamp="20190619 09:07:09.041" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:09.041" level="INFO">  Battery percent: 90%</msg>
+<msg timestamp="20190619 09:07:09.041" level="INFO">  Charger state: 1</msg>
+<msg timestamp="20190619 09:07:09.046" level="INFO">Device info:</msg>
+<msg timestamp="20190619 09:07:09.047" level="INFO">  Description: Go Direct® Force and Acceleration Sensor</msg>
+<msg timestamp="20190619 09:07:09.047" level="INFO">  Order code: GDX-FOR</msg>
+<msg timestamp="20190619 09:07:09.047" level="INFO">  Serial number: 072002M1</msg>
+<msg timestamp="20190619 09:07:09.047" level="INFO">  Device name: GDX-FOR 072002M1</msg>
+<msg timestamp="20190619 09:07:09.048" level="INFO">  Mfg ID: 8</msg>
+<msg timestamp="20190619 09:07:09.048" level="INFO">  Mfg Date: 8/10/2018</msg>
+<msg timestamp="20190619 09:07:09.048" level="INFO">  Master FW version: 4.2.0</msg>
+<msg timestamp="20190619 09:07:09.048" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:09.049" level="INFO">  BLE address: 90:fd:9f:f6:8a:f9</msg>
+<msg timestamp="20190619 09:07:09.049" level="INFO">  NVRAM size: 8192bytes</msg>
+<msg timestamp="20190619 09:07:09.049" level="INFO">Number of usb devices found = 2
+1: Go Direct Sensor USB 
+2: Go Direct Sensor USB 
+Select one device:USB Device successfully opened =  True</msg>
+<status status="PASS" starttime="20190619 09:07:09.020" endtime="20190619 09:07:09.049"></status>
+</kw>
+<kw name="check_usb_force_sensor_KW">
+<doc>Fails keyword if specific Force sensor not on correct USB Port</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:09.055" level="INFO">${InformationList} = ['GDX-FOR 072002M1', 'Go Direct® Force and Acceleration Sensor', 90, 'Charging', '']</msg>
+<status status="PASS" starttime="20190619 09:07:09.051" endtime="20190619 09:07:09.055"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${USB_GDX-FOR}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:09.055" endtime="20190619 09:07:09.056"></status>
+</kw>
+<status status="PASS" starttime="20190619 09:07:09.050" endtime="20190619 09:07:09.057"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<status status="PASS" starttime="20190619 09:07:09.058" endtime="20190619 09:07:09.067"></status>
+</kw>
+<tags>
+<tag>usb_smoke</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:09.011" endtime="20190619 09:07:09.069" critical="yes"></status>
+</test>
+<test id="s1-t3" name="usb_select_invalid_port_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify attempt to select usb port with no sensor on it</arg>
+</arguments>
+<msg timestamp="20190619 09:07:09.079" level="INFO">Verify attempt to select usb port with no sensor on it</msg>
+<status status="PASS" starttime="20190619 09:07:09.078" endtime="20190619 09:07:09.079"></status>
+</kw>
+<kw name="Choose Usb" library="usbportfeed">
+<arguments>
+<arg>${port_5_no_sensor}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:09.081" endtime="20190619 09:07:09.083"></status>
+</kw>
+<kw name="Open Usb" library="gdx">
+<doc>Discovers the Go Direct device with a USB connection and opens that device 
+for data collection. If there are multiple devices discovered, a list of devices 
+is printed to the terminal with a prompt for the user to choose one.</doc>
+<msg timestamp="20190619 09:07:09.096" level="INFO">Number of usb devices found = 2
+1: Go Direct Sensor USB 
+2: Go Direct Sensor USB 
+Select one device:Selection was invalid</msg>
+<status status="PASS" starttime="20190619 09:07:09.084" endtime="20190619 09:07:09.096"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:09.099" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190619 09:07:09.098" endtime="20190619 09:07:09.099"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${None}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:09.100" endtime="20190619 09:07:09.101"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<status status="PASS" starttime="20190619 09:07:09.102" endtime="20190619 09:07:09.103"></status>
+</kw>
+<tags>
+<tag>usb_negative_test</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:09.075" endtime="20190619 09:07:09.104" critical="yes"></status>
+</test>
+<test id="s1-t4" name="usb_select_bad_input_port_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify attempt to select usb port using a -1 as input</arg>
+</arguments>
+<msg timestamp="20190619 09:07:09.111" level="INFO">Verify attempt to select usb port using a -1 as input</msg>
+<status status="PASS" starttime="20190619 09:07:09.111" endtime="20190619 09:07:09.112"></status>
+</kw>
+<kw name="Choose Usb" library="usbportfeed">
+<arguments>
+<arg>${port_negative_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:09.112" endtime="20190619 09:07:09.114"></status>
+</kw>
+<kw name="Open Usb" library="gdx">
+<doc>Discovers the Go Direct device with a USB connection and opens that device 
+for data collection. If there are multiple devices discovered, a list of devices 
+is printed to the terminal with a prompt for the user to choose one.</doc>
+<msg timestamp="20190619 09:07:09.128" level="INFO">Number of usb devices found = 2
+1: Go Direct Sensor USB 
+2: Go Direct Sensor USB 
+Select one device:Selection was invalid</msg>
+<status status="PASS" starttime="20190619 09:07:09.115" endtime="20190619 09:07:09.128"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:09.132" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190619 09:07:09.131" endtime="20190619 09:07:09.133"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${None}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:09.134" endtime="20190619 09:07:09.135"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<status status="PASS" starttime="20190619 09:07:09.136" endtime="20190619 09:07:09.136"></status>
+</kw>
+<tags>
+<tag>usb_negative_test</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:09.108" endtime="20190619 09:07:09.137" critical="yes"></status>
+</test>
+<test id="s1-t5" name="ble_smoke_test_1_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify attempt to connect to a ble GDX-TMP Sensor</arg>
+</arguments>
+<msg timestamp="20190619 09:07:09.144" level="INFO">Verify attempt to connect to a ble GDX-TMP Sensor</msg>
+<status status="PASS" starttime="20190619 09:07:09.143" endtime="20190619 09:07:09.144"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<msg timestamp="20190619 09:07:09.197" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190619 09:07:09.197" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:09.285" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:09.540" level="INFO">Resetting and reconnecting to device for a clean environment</msg>
+<msg timestamp="20190619 09:07:09.541" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:09.627" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:09.877" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:10.212" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:10.542" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:10.630" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:10.894" level="INFO">Disabling advertising</msg>
+<msg timestamp="20190619 09:07:10.899" level="INFO">Starting an active scan</msg>
+<msg timestamp="20190619 09:07:10.901" level="INFO">Pausing for 5s to allow scan to complete</msg>
+<msg timestamp="20190619 09:07:15.901" level="INFO">Stopping scan</msg>
+<msg timestamp="20190619 09:07:15.946" level="INFO">Discovered 48 devices: [{'address': '00:0B:57:4F:0E:4B', 'name': 'GDX-TMP 0F1024D5', 'rssi': -67, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024D5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F8:DF:B5', 'name': 'GDX-FOR 072002F9', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002F9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:77:08', 'name': 'GDX-EA 06100017', 'rssi': -60, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-EA 06100017', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01061')}, 'scan_response_packet': {}}}, {'address': '42:22:2D:6F:B6:8C', 'name': '', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x11\x18j\xc8\x1d')}}}, {'address': '00:0B:57:2E:9A:A2', 'name': 'GDX-FOR 07100161', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100161', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:8A:F9', 'name': 'GDX-FOR 072002M1', 'rssi': -47, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002M1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9C:45', 'name': 'GDX-FOR 071004J9', 'rssi': -72, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071004J9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '08:6B:D7:09:47:AE', 'name': 'GDX-TMP 0F1080L5', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1080L5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:6A:15', 'name': 'GDX-COL 02100640', 'rssi': -77, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-COL 02100640', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01021')}, 'scan_response_packet': {}}}, {'address': '11:F5:CD:89:28:CF', 'name': '', 'rssi': -67, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\x99\x1e\xd00"\xbb\xec\xc0\tE-\xc4\x03\x1d\xc7\x81\x81W\xf8\x8e\x8c\x99\x80')}}}, {'address': '7E:85:E7:45:35:B8', 'name': '', 'rssi': -64, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x18l\xd6t')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:82:50', 'name': 'GDX-TMP 0F106831', 'rssi': -61, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F106831', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:47:C5', 'name': 'GDX-CUR 0I1002H7', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I1002H7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:66:1A', 'name': 'GDX-LC 091011L8', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091011L8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '3E:54:3D:E4:D4:CB', 'name': '', 'rssi': -83, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\xd0(T\x1e\x88y\xb0\x0b\xbf}\xb93\x14+(\xfa\xc6m2o\\\xa1`')}}}, {'address': '00:0B:57:4F:1F:39', 'name': 'GDX-TMP 0F1024B4', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024B4', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:AE:30:CA', 'name': 'GDX-ACC 0H1015R5', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1015R5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:25:FB', 'name': 'GDX-RMS 0L1000G8', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-RMS 0L1000G8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010L1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:A5:56:FB', 'name': 'GDX-SND 0T100002', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T100002', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}}}, {'address': '00:0B:57:6C:57:C2', 'name': 'GDX-LC 091003X7', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091003X7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '14:10:9F:E3:6B:A0', 'name': '', 'rssi': -86, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x0b\x1c\xeb\xa6\\')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:7B:E6', 'name': 'GDX-GP 081014A2', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 081014A2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:32:DC', 'name': 'GDX-LC 091004A6', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004A6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:41:A1:B9', 'name': 'GDX-MD 0B103437', 'rssi': -74, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B103437', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:16:26', 'name': 'GDX-FOR 07100122', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100122', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:13:E8:01', 'name': 'Mel_2017_B 1.95', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01H\x0b\xec\x93\xb8\xe8\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_2017_B 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '90:FD:9F:F6:76:26', 'name': 'GDX-SND 0T1000B5', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T1000B5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:13:BD', 'name': 'GDX-FOR 071000P2', 'rssi': -80, 'packet_data': {'discoverable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071000P2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '76:84:BB:35:41:44', 'name': '', 'rssi': -78, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x13\x1c/\x92\x1c')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:12:AC:64', 'name': 'Mel_6 1.95', 'rssi': -57, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x10\x0b\x8c"\x1af\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_6 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '00:0B:57:29:49:95', 'name': 'GDX-CON 03100018', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CON 03100018', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01031')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:23:22', 'name': 'GDX-GP 08101007', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 08101007', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '64:D2:26:D4:B9:D7', 'name': '', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x03\x18\xb7K\xa9')}, 'scan_response_packet': {}}}, {'address': '51:A5:CE:76:F4:D5', 'name': '', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x08\xb4Q\xcd\x80\x8a\x7f\x06pM&amp;\x10\x8e\x11')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:43:AF', 'name': 'GDX-MD 0B1005W1', 'rssi': -86, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B1005W1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:32:5C', 'name': 'GDX-TMP 0F1029T6', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1029T6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:32:FF:67', 'name': '', 'rssi': -75, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x08\xc0\xa8\xc0+')}, 'scan_response_packet': {}}}, {'address': '73:10:65:58:62:F3', 'name': '', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x02\x0b\x08')}}}, {'address': '90:FD:9F:A5:5E:85', 'name': 'GDX-CUR 0I100134', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I100134', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}}}, {'address': '00:0B:57:29:76:07', 'name': 'GDX-3MG 01100027', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-3MG 01100027', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01011')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:2E:10:10', 'name': '', 'rssi': -76, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x05\xc0\xa8\xc0\xdd')}, 'scan_response_packet': {}}}, {'address': '48:58:4E:52:CE:75', 'name': '', 'rssi': -72, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x00\xe4\x06P\x1ar\xcd\xbb\xca\\\xfd2\x04\xfd')}, 'scan_response_packet': {}}}, {'address': '44:FD:A6:3F:D3:85', 'name': '', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x07\x18\xa8a&lt;')}}}, {'address': '20:C3:8F:83:9B:FA', 'name': '', 'rssi': -67, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x00\x00\xcd\x12\x86\x8b\x01\x00\x00\x00C\x01\x04')}}}, {'address': 'B0:34:95:34:49:EE', 'name': '', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x02\xc0\xa8\xc0\x02')}}}, {'address': '90:59:AF:13:9F:A9', 'name': 'Mel_5 1.90', 'rssi': -70, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01&gt;\x0b\xd4\x0e\xeb1\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_5 1.90', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '90:FD:9F:78:53:06', 'name': 'GDX-LC 091004L0', 'rssi': -90, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004L0', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:96:2B', 'name': 'GDX-ACC 0H1020P8', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1020P8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}}}]</msg>
+<msg timestamp="20190619 09:07:15.947" level="INFO">Connecting to device at address 90:FD:9F:FA:82:50 (timeout 5s)</msg>
+<msg timestamp="20190619 09:07:15.984" level="INFO">Connection status: handle=0x0, flags=(80, 130, 250, 159, 253, 144), address=0xb'5082fa9ffd90', connection interval=312.500000ms, timeout=1590, latency=253 intervals, bonding=0x90</msg>
+<msg timestamp="20190619 09:07:15.984" level="INFO">Connected to 90:FD:9F:FA:82:50</msg>
+<msg timestamp="20190619 09:07:15.986" level="INFO">Fetching characteristics for connection 0</msg>
+<msg timestamp="20190619 09:07:16.111" level="INFO">Found approved characteristic 00002a00-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:16.113" level="INFO">Found approved characteristic 00002a01-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:16.260" level="INFO">Found approved characteristic 00002a29-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:16.262" level="INFO">Found approved characteristic 00002a25-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:16.409" level="INFO">Found approved characteristic 00002a26-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:16.411" level="INFO">Found approved characteristic 00002a28-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:16.559" level="INFO">Found approved characteristic 00002a19-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:16.709" level="INFO">Found custom characteristic f4bf14a6-c7d5-4b6d-8aa8-df1a7c83adcb</msg>
+<msg timestamp="20190619 09:07:17.009" level="INFO">Found custom characteristic b41e6675-a329-40e0-aa01-44d2f444babe</msg>
+<msg timestamp="20190619 09:07:17.309" level="INFO">Found custom characteristic 8e6f094a-5819-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:17.609" level="INFO">Found custom characteristic 9cea5308-59a9-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:17.908" level="INFO">Found custom characteristic cf052904-5d95-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:18.209" level="INFO">Found custom characteristic 248d6f39-5819-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:18.357" level="INFO">Characteristic 0x00002a00-0000-1000-8000-00805f9b34fb is handle 0x3</msg>
+<msg timestamp="20190619 09:07:18.357" level="INFO">Characteristic 0x00002a01-0000-1000-8000-00805f9b34fb is handle 0x5</msg>
+<msg timestamp="20190619 09:07:18.357" level="INFO">Characteristic 0x00002a29-0000-1000-8000-00805f9b34fb is handle 0x8</msg>
+<msg timestamp="20190619 09:07:18.358" level="INFO">Characteristic 0x00002a25-0000-1000-8000-00805f9b34fb is handle 0xa</msg>
+<msg timestamp="20190619 09:07:18.358" level="INFO">Characteristic 0x00002a26-0000-1000-8000-00805f9b34fb is handle 0xc</msg>
+<msg timestamp="20190619 09:07:18.358" level="INFO">Characteristic 0x00002a28-0000-1000-8000-00805f9b34fb is handle 0xe</msg>
+<msg timestamp="20190619 09:07:18.358" level="INFO">Characteristic 0x00002a19-0000-1000-8000-00805f9b34fb is handle 0x11</msg>
+<msg timestamp="20190619 09:07:18.359" level="INFO">Characteristic 0xf4bf14a6-c7d5-4b6d-8aa8-df1a7c83adcb is handle 0x14</msg>
+<msg timestamp="20190619 09:07:18.359" level="INFO">Characteristic 0xb41e6675-a329-40e0-aa01-44d2f444babe is handle 0x16</msg>
+<msg timestamp="20190619 09:07:18.359" level="INFO">Characteristic descriptor 0x00002902-0000-1000-8000-00805f9b34fb is handle 0x17</msg>
+<msg timestamp="20190619 09:07:18.359" level="INFO">Characteristic 0x8e6f094a-5819-11e6-8b77-86f30ca893d3 is handle 0x1a</msg>
+<msg timestamp="20190619 09:07:18.360" level="INFO">Characteristic 0x9cea5308-59a9-11e6-8b77-86f30ca893d3 is handle 0x1c</msg>
+<msg timestamp="20190619 09:07:18.360" level="INFO">Characteristic 0xcf052904-5d95-11e6-8b77-86f30ca893d3 is handle 0x1e</msg>
+<msg timestamp="20190619 09:07:18.360" level="INFO">Characteristic 0x248d6f39-5819-11e6-8b77-86f30ca893d3 is handle 0x20</msg>
+<msg timestamp="20190619 09:07:18.363" level="INFO">Subscribed to uuid=b41e6675-a329-40e0-aa01-44d2f444babe</msg>
+<msg timestamp="20190619 09:07:19.126" level="INFO">Connection status: handle=0x0, flags=(80, 130, 250, 159, 253, 144), address=0xb'5082fa9ffd90', connection interval=312.500000ms, timeout=1590, latency=253 intervals, bonding=0x90</msg>
+<msg timestamp="20190619 09:07:19.146" level="INFO">Device status:</msg>
+<msg timestamp="20190619 09:07:19.146" level="INFO">  Status: 0</msg>
+<msg timestamp="20190619 09:07:19.147" level="INFO">  Master FW version: 4.2.0</msg>
+<msg timestamp="20190619 09:07:19.147" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:19.147" level="INFO">  Battery percent: 95%</msg>
+<msg timestamp="20190619 09:07:19.147" level="INFO">  Charger state: 1</msg>
+<msg timestamp="20190619 09:07:19.185" level="INFO">Device info:</msg>
+<msg timestamp="20190619 09:07:19.185" level="INFO">  Description: Go Direct® Temperature Probe</msg>
+<msg timestamp="20190619 09:07:19.185" level="INFO">  Order code: GDX-TMP</msg>
+<msg timestamp="20190619 09:07:19.185" level="INFO">  Serial number: 0F106831</msg>
+<msg timestamp="20190619 09:07:19.186" level="INFO">  Device name: GDX-TMP 0F106831</msg>
+<msg timestamp="20190619 09:07:19.186" level="INFO">  Mfg ID: 8</msg>
+<msg timestamp="20190619 09:07:19.186" level="INFO">  Mfg Date: 12/26/2018</msg>
+<msg timestamp="20190619 09:07:19.186" level="INFO">  Master FW version: 4.2.0</msg>
+<msg timestamp="20190619 09:07:19.187" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:19.187" level="INFO">  BLE address: 90:fd:9f:fa:82:50</msg>
+<msg timestamp="20190619 09:07:19.187" level="INFO">  NVRAM size: 8192bytes</msg>
+<msg timestamp="20190619 09:07:19.187" level="INFO">Wait for device to connect via ble...
+BLE device successfully opened =  True</msg>
+<status status="PASS" starttime="20190619 09:07:09.145" endtime="20190619 09:07:19.188"></status>
+</kw>
+<kw name="check_ble_temp_probe_KW">
+<doc>Fails keyword if specific Temperature Probe not on correct USB Port</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:19.191" level="INFO">${InformationList} = ['GDX-TMP 0F106831', 'Go Direct® Temperature Probe', 95, 'Charging', -61]</msg>
+<status status="PASS" starttime="20190619 09:07:19.190" endtime="20190619 09:07:19.191"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:19.191" endtime="20190619 09:07:19.192"></status>
+</kw>
+<status status="PASS" starttime="20190619 09:07:19.189" endtime="20190619 09:07:19.192"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<msg timestamp="20190619 09:07:19.222" level="INFO">Disconnected from 90:FD:9F:FA:82:50</msg>
+<msg timestamp="20190619 09:07:19.223" level="INFO">Stopping</msg>
+<status status="PASS" starttime="20190619 09:07:19.193" endtime="20190619 09:07:19.228"></status>
+</kw>
+<tags>
+<tag>ble__smoke</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:09.142" endtime="20190619 09:07:19.229" critical="yes"></status>
+</test>
+<test id="s1-t6" name="ble_sensor_info_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify Sensor Info of a GDX-TMP probe can be gathered</arg>
+</arguments>
+<msg timestamp="20190619 09:07:19.236" level="INFO">Verify Sensor Info of a GDX-TMP probe can be gathered</msg>
+<status status="PASS" starttime="20190619 09:07:19.236" endtime="20190619 09:07:19.237"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<msg timestamp="20190619 09:07:19.239" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190619 09:07:19.239" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:19.327" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:19.581" level="INFO">Resetting and reconnecting to device for a clean environment</msg>
+<msg timestamp="20190619 09:07:19.585" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:19.670" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:19.920" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:20.255" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:20.591" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:20.679" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:20.935" level="INFO">Disabling advertising</msg>
+<msg timestamp="20190619 09:07:20.940" level="INFO">Starting an active scan</msg>
+<msg timestamp="20190619 09:07:20.941" level="INFO">Pausing for 5s to allow scan to complete</msg>
+<msg timestamp="20190619 09:07:25.942" level="INFO">Stopping scan</msg>
+<msg timestamp="20190619 09:07:25.991" level="INFO">Discovered 47 devices: [{'address': '00:0B:57:2E:9C:45', 'name': 'GDX-FOR 071004J9', 'rssi': -69, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071004J9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '7E:85:E7:45:35:B8', 'name': '', 'rssi': -64, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x18l\xd6t')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:7B:E6', 'name': 'GDX-GP 081014A2', 'rssi': -73, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 081014A2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:6A:15', 'name': 'GDX-COL 02100640', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-COL 02100640', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01021')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:66:1A', 'name': 'GDX-LC 091011L8', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091011L8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '11:F5:CD:89:28:CF', 'name': '', 'rssi': -68, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\x99\x1e\xd00"\xbb\xec\xc0\tE-\xc4\x03\x1d\xc7\x81\x81W\xf8\x8e\x8c\x99\x80')}}}, {'address': '90:FD:9F:F6:8A:F9', 'name': 'GDX-FOR 072002M1', 'rssi': -45, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002M1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:82:50', 'name': 'GDX-TMP 0F106831', 'rssi': -73, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F106831', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '14:10:9F:E3:6B:A0', 'name': '', 'rssi': -70, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x0b\x1c\xeb\xa6\\')}, 'scan_response_packet': {}}}, {'address': '3E:54:3D:E4:D4:CB', 'name': '', 'rssi': -84, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\xd0(T\x1e\x88y\xb0\x0b\xbf}\xb93\x14+(\xfa\xc6m2o\\\xa1`')}}}, {'address': '51:A5:CE:76:F4:D5', 'name': '', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x08\xb7Q\xa6\x84\\d&lt;\x8a\xe4\xe7\xcde\xd9')}, 'scan_response_packet': {}}}, {'address': '48:58:4E:52:CE:75', 'name': '', 'rssi': -70, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x00\xe4\x06P\x1ar\xcd\xbb\xca\\\xfd2\x04\xfd')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:77:08', 'name': 'GDX-EA 06100017', 'rssi': -60, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-EA 06100017', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01061')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:A5:5E:85', 'name': 'GDX-CUR 0I100134', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I100134', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:23:22', 'name': 'GDX-GP 08101007', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 08101007', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:0E:4B', 'name': 'GDX-TMP 0F1024D5', 'rssi': -68, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024D5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:32:FF:67', 'name': '', 'rssi': -77, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x08\xc0\xa8\xc0+')}, 'scan_response_packet': {}}}, {'address': '76:84:BB:35:41:44', 'name': '', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x13\x1c/\x92\x1c')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:AE:30:CA', 'name': 'GDX-ACC 0H1015R5', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1015R5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:2E:10:10', 'name': '', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x05\xc0\xa8\xc0\xdd')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F8:DF:B5', 'name': 'GDX-FOR 072002F9', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002F9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9A:A2', 'name': 'GDX-FOR 07100161', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100161', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:43:AF', 'name': 'GDX-MD 0B1005W1', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B1005W1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:57:C2', 'name': 'GDX-LC 091003X7', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091003X7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '73:10:65:58:62:F3', 'name': '', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x02\x0b\x08')}}}, {'address': '90:FD:9F:78:53:06', 'name': 'GDX-LC 091004L0', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004L0', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:76:26', 'name': 'GDX-SND 0T1000B5', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T1000B5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:A5:56:FB', 'name': 'GDX-SND 0T100002', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T100002', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}}}, {'address': '00:0B:57:4F:25:FB', 'name': 'GDX-RMS 0L1000G8', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-RMS 0L1000G8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010L1')}, 'scan_response_packet': {}}}, {'address': '08:6B:D7:09:47:AE', 'name': 'GDX-TMP 0F1080L5', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1080L5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:16:26', 'name': 'GDX-FOR 07100122', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100122', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:13:BD', 'name': 'GDX-FOR 071000P2', 'rssi': -84, 'packet_data': {'discoverable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071000P2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:1F:39', 'name': 'GDX-TMP 0F1024B4', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024B4', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '42:22:2D:6F:B6:8C', 'name': '', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x11\x18j\xc8\x1d')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:13:E8:01', 'name': 'Mel_2017_B 1.95', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01H\x0b\xfc\xba\xb8\xe8\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_2017_B 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '00:0B:57:29:76:07', 'name': 'GDX-3MG 01100027', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-3MG 01100027', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01011')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:41:A1:B9', 'name': 'GDX-MD 0B103437', 'rssi': -75, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B103437', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:12:AC:64', 'name': 'Mel_6 1.95', 'rssi': -73, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x10\x0b\x9cI\x1af\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_6 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '00:0B:57:29:49:95', 'name': 'GDX-CON 03100018', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CON 03100018', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01031')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:32:DC', 'name': 'GDX-LC 091004A6', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004A6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:32:5C', 'name': 'GDX-TMP 0F1029T6', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1029T6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:96:2B', 'name': 'GDX-ACC 0H1020P8', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1020P8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:47:C5', 'name': 'GDX-CUR 0I1002H7', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I1002H7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '20:C3:8F:83:9B:FA', 'name': 'GWLdrbQ4', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x06\x00\xd7:\x86\x8b\x01\x00\x00\x00C\x01\x04')}, 'scan_response_packet': {'complete_local_name': 'GWLdrbQ4', 'slave_connection_interval_range': bytearray(b' \x00 \x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '44:FD:A6:3F:D3:85', 'name': '', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x07\x18\xa8a&lt;')}}}, {'address': '90:59:AF:13:9F:A9', 'name': '', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01&gt;\x0b\xb4=\xeb1\x03\x00\x00\x00?\x01\x00')}}}, {'address': 'B0:34:95:34:49:EE', 'name': '', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x02\xc0\xa8\xc0\x02')}, 'scan_response_packet': {}}}]</msg>
+<msg timestamp="20190619 09:07:25.993" level="INFO">Connecting to device at address 90:FD:9F:FA:82:50 (timeout 5s)</msg>
+<msg timestamp="20190619 09:07:26.069" level="INFO">Connection status: handle=0x0, flags=(80, 130, 250, 159, 253, 144), address=0xb'5082fa9ffd90', connection interval=312.500000ms, timeout=1590, latency=253 intervals, bonding=0x90</msg>
+<msg timestamp="20190619 09:07:26.069" level="INFO">Connected to 90:FD:9F:FA:82:50</msg>
+<msg timestamp="20190619 09:07:26.070" level="INFO">Fetching characteristics for connection 0</msg>
+<msg timestamp="20190619 09:07:26.219" level="INFO">Found approved characteristic 00002a00-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:26.221" level="INFO">Found approved characteristic 00002a01-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:26.367" level="INFO">Found approved characteristic 00002a29-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:26.370" level="INFO">Found approved characteristic 00002a25-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:26.517" level="INFO">Found approved characteristic 00002a26-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:26.519" level="INFO">Found approved characteristic 00002a28-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:26.666" level="INFO">Found approved characteristic 00002a19-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:26.816" level="INFO">Found custom characteristic f4bf14a6-c7d5-4b6d-8aa8-df1a7c83adcb</msg>
+<msg timestamp="20190619 09:07:27.116" level="INFO">Found custom characteristic b41e6675-a329-40e0-aa01-44d2f444babe</msg>
+<msg timestamp="20190619 09:07:27.491" level="INFO">Found custom characteristic 8e6f094a-5819-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:27.791" level="INFO">Found custom characteristic 9cea5308-59a9-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:28.166" level="INFO">Found custom characteristic cf052904-5d95-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:28.466" level="INFO">Found custom characteristic 248d6f39-5819-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:28.614" level="INFO">Characteristic 0x00002a00-0000-1000-8000-00805f9b34fb is handle 0x3</msg>
+<msg timestamp="20190619 09:07:28.615" level="INFO">Characteristic 0x00002a01-0000-1000-8000-00805f9b34fb is handle 0x5</msg>
+<msg timestamp="20190619 09:07:28.615" level="INFO">Characteristic 0x00002a29-0000-1000-8000-00805f9b34fb is handle 0x8</msg>
+<msg timestamp="20190619 09:07:28.615" level="INFO">Characteristic 0x00002a25-0000-1000-8000-00805f9b34fb is handle 0xa</msg>
+<msg timestamp="20190619 09:07:28.616" level="INFO">Characteristic 0x00002a26-0000-1000-8000-00805f9b34fb is handle 0xc</msg>
+<msg timestamp="20190619 09:07:28.616" level="INFO">Characteristic 0x00002a28-0000-1000-8000-00805f9b34fb is handle 0xe</msg>
+<msg timestamp="20190619 09:07:28.616" level="INFO">Characteristic 0x00002a19-0000-1000-8000-00805f9b34fb is handle 0x11</msg>
+<msg timestamp="20190619 09:07:28.616" level="INFO">Characteristic 0xf4bf14a6-c7d5-4b6d-8aa8-df1a7c83adcb is handle 0x14</msg>
+<msg timestamp="20190619 09:07:28.617" level="INFO">Characteristic 0xb41e6675-a329-40e0-aa01-44d2f444babe is handle 0x16</msg>
+<msg timestamp="20190619 09:07:28.617" level="INFO">Characteristic descriptor 0x00002902-0000-1000-8000-00805f9b34fb is handle 0x17</msg>
+<msg timestamp="20190619 09:07:28.617" level="INFO">Characteristic 0x8e6f094a-5819-11e6-8b77-86f30ca893d3 is handle 0x1a</msg>
+<msg timestamp="20190619 09:07:28.617" level="INFO">Characteristic 0x9cea5308-59a9-11e6-8b77-86f30ca893d3 is handle 0x1c</msg>
+<msg timestamp="20190619 09:07:28.618" level="INFO">Characteristic 0xcf052904-5d95-11e6-8b77-86f30ca893d3 is handle 0x1e</msg>
+<msg timestamp="20190619 09:07:28.618" level="INFO">Characteristic 0x248d6f39-5819-11e6-8b77-86f30ca893d3 is handle 0x20</msg>
+<msg timestamp="20190619 09:07:28.620" level="INFO">Subscribed to uuid=b41e6675-a329-40e0-aa01-44d2f444babe</msg>
+<msg timestamp="20190619 09:07:29.384" level="INFO">Connection status: handle=0x0, flags=(80, 130, 250, 159, 253, 144), address=0xb'5082fa9ffd90', connection interval=312.500000ms, timeout=1590, latency=253 intervals, bonding=0x90</msg>
+<msg timestamp="20190619 09:07:29.403" level="INFO">Device status:</msg>
+<msg timestamp="20190619 09:07:29.404" level="INFO">  Status: 0</msg>
+<msg timestamp="20190619 09:07:29.404" level="INFO">  Master FW version: 4.2.0</msg>
+<msg timestamp="20190619 09:07:29.404" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:29.404" level="INFO">  Battery percent: 90%</msg>
+<msg timestamp="20190619 09:07:29.405" level="INFO">  Charger state: 1</msg>
+<msg timestamp="20190619 09:07:29.436" level="INFO">Device info:</msg>
+<msg timestamp="20190619 09:07:29.436" level="INFO">  Description: Go Direct® Temperature Probe</msg>
+<msg timestamp="20190619 09:07:29.436" level="INFO">  Order code: GDX-TMP</msg>
+<msg timestamp="20190619 09:07:29.437" level="INFO">  Serial number: 0F106831</msg>
+<msg timestamp="20190619 09:07:29.437" level="INFO">  Device name: GDX-TMP 0F106831</msg>
+<msg timestamp="20190619 09:07:29.437" level="INFO">  Mfg ID: 8</msg>
+<msg timestamp="20190619 09:07:29.438" level="INFO">  Mfg Date: 12/26/2018</msg>
+<msg timestamp="20190619 09:07:29.438" level="INFO">  Master FW version: 4.2.0</msg>
+<msg timestamp="20190619 09:07:29.438" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:29.438" level="INFO">  BLE address: 90:fd:9f:fa:82:50</msg>
+<msg timestamp="20190619 09:07:29.438" level="INFO">  NVRAM size: 8192bytes</msg>
+<msg timestamp="20190619 09:07:29.439" level="INFO">Wait for device to connect via ble...
+BLE device successfully opened =  True</msg>
+<status status="PASS" starttime="20190619 09:07:19.238" endtime="20190619 09:07:29.439"></status>
+</kw>
+<kw name="check_ble_temp_probe_KW">
+<doc>Fails keyword if specific Temperature Probe not on correct USB Port</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:29.442" level="INFO">${InformationList} = ['GDX-TMP 0F106831', 'Go Direct® Temperature Probe', 90, 'Charging', -73]</msg>
+<status status="PASS" starttime="20190619 09:07:29.441" endtime="20190619 09:07:29.442"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:29.443" endtime="20190619 09:07:29.444"></status>
+</kw>
+<status status="PASS" starttime="20190619 09:07:29.440" endtime="20190619 09:07:29.444"></status>
+</kw>
+<kw name="Sensor Info" library="gdx">
+<doc>Information about all of the sensors that are on an open device. Note that this is different 
+than the enabled_sensor_info() function, which provides a description of only those sensors 
+that were enabled for data collection. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:29.463" level="INFO">Available sensors: 1</msg>
+<msg timestamp="20190619 09:07:29.497" level="INFO">Sensor[1] info:</msg>
+<msg timestamp="20190619 09:07:29.497" level="INFO">  Description: Temperature</msg>
+<msg timestamp="20190619 09:07:29.497" level="INFO">  ID: 400</msg>
+<msg timestamp="20190619 09:07:29.498" level="INFO">  Measurement type: 0</msg>
+<msg timestamp="20190619 09:07:29.498" level="INFO">  Sampling mode: 0</msg>
+<msg timestamp="20190619 09:07:29.498" level="INFO">  Units: °C</msg>
+<msg timestamp="20190619 09:07:29.498" level="INFO">  Measurement uncertainty: 0</msg>
+<msg timestamp="20190619 09:07:29.499" level="INFO">  Measurement min: -40</msg>
+<msg timestamp="20190619 09:07:29.499" level="INFO">  Measurement max: 125</msg>
+<msg timestamp="20190619 09:07:29.499" level="INFO">  Period typical 500000</msg>
+<msg timestamp="20190619 09:07:29.500" level="INFO">  Period min: 1000</msg>
+<msg timestamp="20190619 09:07:29.500" level="INFO">  Period max: 3600000000</msg>
+<msg timestamp="20190619 09:07:29.500" level="INFO">  Period granularity: 100</msg>
+<msg timestamp="20190619 09:07:29.500" level="INFO">  Mutual exclusion mask: 0x0</msg>
+<msg timestamp="20190619 09:07:29.501" level="INFO">${InformationList} = [[1, 'Temperature', '°C', []]]</msg>
+<status status="PASS" starttime="20190619 09:07:29.445" endtime="20190619 09:07:29.501"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>[item for sublist in ${InformationList} for item in (sublist if isinstance(sublist, list) else [sublist])]</arg>
+</arguments>
+<assign>
+<var>${flat}</var>
+</assign>
+<msg timestamp="20190619 09:07:29.504" level="INFO">${flat} = [1, 'Temperature', '°C', []]</msg>
+<status status="PASS" starttime="20190619 09:07:29.502" endtime="20190619 09:07:29.504"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${CH_1}</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190619 09:07:29.505" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20190619 09:07:29.504" endtime="20190619 09:07:29.505"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${flat}</arg>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:29.507" endtime="20190619 09:07:29.507"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${flat}</arg>
+<arg>${Unit°C}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:29.508" endtime="20190619 09:07:29.509"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${flat}</arg>
+<arg>${TEMPERATURE}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:29.511" endtime="20190619 09:07:29.511"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<msg timestamp="20190619 09:07:29.538" level="INFO">Disconnected from 90:FD:9F:FA:82:50</msg>
+<msg timestamp="20190619 09:07:29.538" level="INFO">Stopping</msg>
+<status status="PASS" starttime="20190619 09:07:29.513" endtime="20190619 09:07:29.545"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:19.234" endtime="20190619 09:07:29.545" critical="yes"></status>
+</test>
+<test id="s1-t7" name="ble_sensor_start_with_no_device_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify proper return condition from start function if no device was selected</arg>
+</arguments>
+<msg timestamp="20190619 09:07:29.553" level="INFO">Verify proper return condition from start function if no device was selected</msg>
+<status status="PASS" starttime="20190619 09:07:29.552" endtime="20190619 09:07:29.553"></status>
+</kw>
+<kw name="Start" library="gdx">
+<doc>Enables the sensors that were selected in the select_sensors() function  
+and then starts data collection. </doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${grab_return}</var>
+</assign>
+<msg timestamp="20190619 09:07:29.555" level="INFO">${grab_return} = None</msg>
+<status status="PASS" starttime="20190619 09:07:29.554" endtime="20190619 09:07:29.555"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${grab_return}</arg>
+<arg>${None}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:29.556" endtime="20190619 09:07:29.557"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:29.550" endtime="20190619 09:07:29.559" critical="yes"></status>
+</test>
+<test id="s1-t8" name="ble_sensor_data_collection_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify we can collect a short 2 samples per second run with gdx-temp</arg>
+</arguments>
+<msg timestamp="20190619 09:07:29.567" level="INFO">Verify we can collect a short 2 samples per second run with gdx-temp</msg>
+<status status="PASS" starttime="20190619 09:07:29.566" endtime="20190619 09:07:29.567"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<msg timestamp="20190619 09:07:29.569" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190619 09:07:29.569" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:29.658" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:29.914" level="INFO">Resetting and reconnecting to device for a clean environment</msg>
+<msg timestamp="20190619 09:07:29.917" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:30.002" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:30.252" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:30.587" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:30.918" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:31.007" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:31.264" level="INFO">Disabling advertising</msg>
+<msg timestamp="20190619 09:07:31.269" level="INFO">Starting an active scan</msg>
+<msg timestamp="20190619 09:07:31.271" level="INFO">Pausing for 5s to allow scan to complete</msg>
+<msg timestamp="20190619 09:07:36.271" level="INFO">Stopping scan</msg>
+<msg timestamp="20190619 09:07:36.316" level="INFO">Discovered 51 devices: [{'address': '20:C3:8F:83:9B:FA', 'name': 'GWLdrbQ4', 'rssi': -66, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x08\x00\x11[\x86\x8b\x01\x00\x00\x00C\x01\x04')}, 'scan_response_packet': {'complete_local_name': 'GWLdrbQ4', 'slave_connection_interval_range': bytearray(b' \x00 \x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '48:58:4E:52:CE:75', 'name': '', 'rssi': -69, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x00\xe4\x06P\x1ar\xcd\xbb\xca\\\xfd2\x04\xfd')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:77:08', 'name': 'GDX-EA 06100017', 'rssi': -60, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-EA 06100017', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01061')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:82:50', 'name': 'GDX-TMP 0F106831', 'rssi': -61, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F106831', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:43:AF', 'name': 'GDX-MD 0B1005W1', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B1005W1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9C:45', 'name': 'GDX-FOR 071004J9', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071004J9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:32:FF:67', 'name': '', 'rssi': -78, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x08\xc0\xa8\xc0+')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:76:26', 'name': 'GDX-SND 0T1000B5', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T1000B5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}, 'scan_response_packet': {}}}, {'address': '42:22:2D:6F:B6:8C', 'name': '', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x11\x18j\xc8\x1d')}, 'scan_response_packet': {}}}, {'address': '76:84:BB:35:41:44', 'name': '', 'rssi': -74, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x13\x1c/\x92\x1c')}}}, {'address': '90:FD:9F:F6:8A:F9', 'name': 'GDX-FOR 072002M1', 'rssi': -48, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002M1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:16:26', 'name': 'GDX-FOR 07100122', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100122', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:6A:15', 'name': 'GDX-COL 02100640', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-COL 02100640', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01021')}, 'scan_response_packet': {}}}, {'address': '14:10:9F:E3:6B:A0', 'name': '', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x0b\x1c\xeb\xa6\\')}, 'scan_response_packet': {}}}, {'address': '73:10:65:58:62:F3', 'name': '', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x02\x0b\x08')}}}, {'address': '90:FD:9F:41:A1:B9', 'name': 'GDX-MD 0B103437', 'rssi': -74, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B103437', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F8:DF:B5', 'name': 'GDX-FOR 072002F9', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002F9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}}}, {'address': '90:FD:9F:A5:56:FB', 'name': 'GDX-SND 0T100002', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T100002', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}}}, {'address': '11:F5:CD:89:28:CF', 'name': '', 'rssi': -79, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\x99\x1e\xd00"\xbb\xec\xc0\tE-\xc4\x03\x1d\xc7\x81\x81W\xf8\x8e\x8c\x99\x80')}}}, {'address': '00:0B:57:4F:0E:4B', 'name': 'GDX-TMP 0F1024D5', 'rssi': -66, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024D5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:AE:30:CA', 'name': 'GDX-ACC 0H1015R5', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1015R5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '3E:54:3D:E4:D4:CB', 'name': '', 'rssi': -79, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\xd0(T\x1e\x88y\xb0\x0b\xbf}\xb93\x14+(\xfa\xc6m2o\\\xa1`')}}}, {'address': '00:0B:57:4F:1F:39', 'name': 'GDX-TMP 0F1024B4', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024B4', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '08:6B:D7:09:47:AE', 'name': 'GDX-TMP 0F1080L5', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1080L5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}}}, {'address': '00:0B:57:6C:57:C2', 'name': 'GDX-LC 091003X7', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091003X7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '7E:85:E7:45:35:B8', 'name': '', 'rssi': -71, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x18l\xd6t')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:23:22', 'name': 'GDX-GP 08101007', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 08101007', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:66:1A', 'name': 'GDX-LC 091011L8', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091011L8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}}}, {'address': '44:FD:A6:3F:D3:85', 'name': '', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x07\x18\xa8a&lt;')}}}, {'address': '64:D2:26:D4:B9:D7', 'name': '', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x03\x18\xb7K\xa9')}}}, {'address': '00:0B:57:29:49:95', 'name': 'GDX-CON 03100018', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CON 03100018', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01031')}}}, {'address': '00:0B:57:6D:32:DC', 'name': 'GDX-LC 091004A6', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004A6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9A:A2', 'name': 'GDX-FOR 07100161', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100161', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:2E:10:10', 'name': '', 'rssi': -70, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x05\xc0\xa8\xc0\xdd')}}}, {'address': '90:FD:9F:BD:7B:E6', 'name': 'GDX-GP 081014A2', 'rssi': -73, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 081014A2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:13:E8:01', 'name': 'Mel_2017_B 1.95', 'rssi': -61, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01H\x0b\x0c\xe2\xb8\xe8\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_2017_B 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '00:0B:57:6C:47:C5', 'name': 'GDX-CUR 0I1002H7', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I1002H7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:25:FB', 'name': 'GDX-RMS 0L1000G8', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-RMS 0L1000G8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010L1')}}}, {'address': '00:0B:57:35:13:BD', 'name': 'GDX-FOR 071000P2', 'rssi': -81, 'packet_data': {'discoverable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071000P2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:13:9F:A9', 'name': 'Mel_5 1.90', 'rssi': -69, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01&gt;\x0b\xf4\\\xeb1\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_5 1.90', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': 'B0:34:95:34:49:EE', 'name': '', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x02\xc0\xa8\xc0\x02')}}}, {'address': '90:59:AF:12:AC:64', 'name': '', 'rssi': -57, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x10\x0b\xacp\x1af\x03\x00\x00\x00?\x01\x00')}}}, {'address': '90:FD:9F:F6:96:2B', 'name': 'GDX-ACC 0H1020P8', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1020P8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}}}, {'address': '90:FD:9F:78:32:5C', 'name': 'GDX-TMP 0F1029T6', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1029T6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}}}, {'address': '90:FD:9F:A5:5E:85', 'name': 'GDX-CUR 0I100134', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I100134', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '51:A5:CE:76:F4:D5', 'name': '', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x08\xb9Q\xf8\x16\x8c\xe4\xd0\xe1\x90\xc6riq')}}}, {'address': '77:BE:56:F4:B3:77', 'name': '', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x00\x97 \xa0H\xd9j\x0f\xfc\xdf\x8d\x1dl\x00')}}}, {'address': '00:0B:57:29:76:07', 'name': 'GDX-3MG 01100027', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-3MG 01100027', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01011')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:46:16:F3', 'name': 'GDX-COL 02100101', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-COL 02100101', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01021')}}}, {'address': '90:FD:9F:78:53:06', 'name': 'GDX-LC 091004L0', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004L0', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}}}, {'address': '38:F9:D3:D3:A0:3B', 'name': '', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x1c\xac\xff\xc4')}}}]</msg>
+<msg timestamp="20190619 09:07:36.317" level="INFO">Connecting to device at address 90:FD:9F:FA:82:50 (timeout 5s)</msg>
+<msg timestamp="20190619 09:07:36.495" level="INFO">Connection status: handle=0x0, flags=(80, 130, 250, 159, 253, 144), address=0xb'5082fa9ffd90', connection interval=312.500000ms, timeout=1590, latency=253 intervals, bonding=0x90</msg>
+<msg timestamp="20190619 09:07:36.495" level="INFO">Connected to 90:FD:9F:FA:82:50</msg>
+<msg timestamp="20190619 09:07:36.496" level="INFO">Fetching characteristics for connection 0</msg>
+<msg timestamp="20190619 09:07:36.636" level="INFO">Found approved characteristic 00002a00-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:36.638" level="INFO">Found approved characteristic 00002a01-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:36.785" level="INFO">Found approved characteristic 00002a29-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:36.788" level="INFO">Found approved characteristic 00002a25-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:36.934" level="INFO">Found approved characteristic 00002a26-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:36.936" level="INFO">Found approved characteristic 00002a28-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:37.084" level="INFO">Found approved characteristic 00002a19-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:37.233" level="INFO">Found custom characteristic f4bf14a6-c7d5-4b6d-8aa8-df1a7c83adcb</msg>
+<msg timestamp="20190619 09:07:37.609" level="INFO">Found custom characteristic b41e6675-a329-40e0-aa01-44d2f444babe</msg>
+<msg timestamp="20190619 09:07:37.909" level="INFO">Found custom characteristic 8e6f094a-5819-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:38.208" level="INFO">Found custom characteristic 9cea5308-59a9-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:38.508" level="INFO">Found custom characteristic cf052904-5d95-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:38.809" level="INFO">Found custom characteristic 248d6f39-5819-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:38.957" level="INFO">Characteristic 0x00002a00-0000-1000-8000-00805f9b34fb is handle 0x3</msg>
+<msg timestamp="20190619 09:07:38.958" level="INFO">Characteristic 0x00002a01-0000-1000-8000-00805f9b34fb is handle 0x5</msg>
+<msg timestamp="20190619 09:07:38.958" level="INFO">Characteristic 0x00002a29-0000-1000-8000-00805f9b34fb is handle 0x8</msg>
+<msg timestamp="20190619 09:07:38.958" level="INFO">Characteristic 0x00002a25-0000-1000-8000-00805f9b34fb is handle 0xa</msg>
+<msg timestamp="20190619 09:07:38.958" level="INFO">Characteristic 0x00002a26-0000-1000-8000-00805f9b34fb is handle 0xc</msg>
+<msg timestamp="20190619 09:07:38.959" level="INFO">Characteristic 0x00002a28-0000-1000-8000-00805f9b34fb is handle 0xe</msg>
+<msg timestamp="20190619 09:07:38.959" level="INFO">Characteristic 0x00002a19-0000-1000-8000-00805f9b34fb is handle 0x11</msg>
+<msg timestamp="20190619 09:07:38.959" level="INFO">Characteristic 0xf4bf14a6-c7d5-4b6d-8aa8-df1a7c83adcb is handle 0x14</msg>
+<msg timestamp="20190619 09:07:38.959" level="INFO">Characteristic 0xb41e6675-a329-40e0-aa01-44d2f444babe is handle 0x16</msg>
+<msg timestamp="20190619 09:07:38.960" level="INFO">Characteristic descriptor 0x00002902-0000-1000-8000-00805f9b34fb is handle 0x17</msg>
+<msg timestamp="20190619 09:07:38.960" level="INFO">Characteristic 0x8e6f094a-5819-11e6-8b77-86f30ca893d3 is handle 0x1a</msg>
+<msg timestamp="20190619 09:07:38.960" level="INFO">Characteristic 0x9cea5308-59a9-11e6-8b77-86f30ca893d3 is handle 0x1c</msg>
+<msg timestamp="20190619 09:07:38.960" level="INFO">Characteristic 0xcf052904-5d95-11e6-8b77-86f30ca893d3 is handle 0x1e</msg>
+<msg timestamp="20190619 09:07:38.960" level="INFO">Characteristic 0x248d6f39-5819-11e6-8b77-86f30ca893d3 is handle 0x20</msg>
+<msg timestamp="20190619 09:07:38.963" level="INFO">Subscribed to uuid=b41e6675-a329-40e0-aa01-44d2f444babe</msg>
+<msg timestamp="20190619 09:07:39.725" level="INFO">Connection status: handle=0x0, flags=(80, 130, 250, 159, 253, 144), address=0xb'5082fa9ffd90', connection interval=312.500000ms, timeout=1590, latency=253 intervals, bonding=0x90</msg>
+<msg timestamp="20190619 09:07:39.746" level="INFO">Device status:</msg>
+<msg timestamp="20190619 09:07:39.746" level="INFO">  Status: 0</msg>
+<msg timestamp="20190619 09:07:39.747" level="INFO">  Master FW version: 4.2.0</msg>
+<msg timestamp="20190619 09:07:39.747" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:39.747" level="INFO">  Battery percent: 95%</msg>
+<msg timestamp="20190619 09:07:39.747" level="INFO">  Charger state: 1</msg>
+<msg timestamp="20190619 09:07:39.785" level="INFO">Device info:</msg>
+<msg timestamp="20190619 09:07:39.786" level="INFO">  Description: Go Direct® Temperature Probe</msg>
+<msg timestamp="20190619 09:07:39.786" level="INFO">  Order code: GDX-TMP</msg>
+<msg timestamp="20190619 09:07:39.786" level="INFO">  Serial number: 0F106831</msg>
+<msg timestamp="20190619 09:07:39.787" level="INFO">  Device name: GDX-TMP 0F106831</msg>
+<msg timestamp="20190619 09:07:39.787" level="INFO">  Mfg ID: 8</msg>
+<msg timestamp="20190619 09:07:39.787" level="INFO">  Mfg Date: 12/26/2018</msg>
+<msg timestamp="20190619 09:07:39.787" level="INFO">  Master FW version: 4.2.0</msg>
+<msg timestamp="20190619 09:07:39.787" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:39.788" level="INFO">  BLE address: 90:fd:9f:fa:82:50</msg>
+<msg timestamp="20190619 09:07:39.788" level="INFO">  NVRAM size: 8192bytes</msg>
+<msg timestamp="20190619 09:07:39.788" level="INFO">Wait for device to connect via ble...
+BLE device successfully opened =  True</msg>
+<status status="PASS" starttime="20190619 09:07:29.568" endtime="20190619 09:07:39.788"></status>
+</kw>
+<kw name="Start" library="gdx">
+<doc>Enables the sensors that were selected in the select_sensors() function  
+and then starts data collection. </doc>
+<arguments>
+<arg>2000</arg>
+</arguments>
+<msg timestamp="20190619 09:07:39.805" level="INFO">Available sensors: 1</msg>
+<msg timestamp="20190619 09:07:39.819" level="INFO">Default sensor: 1</msg>
+<msg timestamp="20190619 09:07:39.819" level="INFO">Autoset sensor mask: 1</msg>
+<msg timestamp="20190619 09:07:39.866" level="INFO">Sensor[1] info:</msg>
+<msg timestamp="20190619 09:07:39.866" level="INFO">  Description: Temperature</msg>
+<msg timestamp="20190619 09:07:39.867" level="INFO">  ID: 400</msg>
+<msg timestamp="20190619 09:07:39.867" level="INFO">  Measurement type: 0</msg>
+<msg timestamp="20190619 09:07:39.867" level="INFO">  Sampling mode: 0</msg>
+<msg timestamp="20190619 09:07:39.867" level="INFO">  Units: °C</msg>
+<msg timestamp="20190619 09:07:39.868" level="INFO">  Measurement uncertainty: 0</msg>
+<msg timestamp="20190619 09:07:39.868" level="INFO">  Measurement min: -40</msg>
+<msg timestamp="20190619 09:07:39.868" level="INFO">  Measurement max: 125</msg>
+<msg timestamp="20190619 09:07:39.868" level="INFO">  Period typical 500000</msg>
+<msg timestamp="20190619 09:07:39.869" level="INFO">  Period min: 1000</msg>
+<msg timestamp="20190619 09:07:39.869" level="INFO">  Period max: 3600000000</msg>
+<msg timestamp="20190619 09:07:39.869" level="INFO">  Period granularity: 100</msg>
+<msg timestamp="20190619 09:07:39.869" level="INFO">  Mutual exclusion mask: 0x0</msg>
+<status status="PASS" starttime="20190619 09:07:39.790" endtime="20190619 09:07:39.955"></status>
+</kw>
+<kw name="Read" library="gdx">
+<doc>Once the start() function has been called, the device will begin sending data  
+at the specified period. You must call read at least as fast as the period, e.g. once  
+per second for a period of 1000 (ms). The collected data will be added to a value list  
+for each enabled sensor. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:39.971" level="INFO">Ignoring non-supported measurement type</msg>
+<msg timestamp="20190619 09:07:39.974" level="INFO">${InformationList} = [22.434133529663086]</msg>
+<status status="PASS" starttime="20190619 09:07:39.957" endtime="20190619 09:07:39.974"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Should Be X Than Y</arg>
+<arg>${low_range} &lt; ${InformationList[0]} &lt; ${high_range}</arg>
+</arguments>
+<kw name="Should Be X Than Y">
+<doc>Checking values within a set range gives reasonable knowledge
+we PASS the test. Anything above or below this range will fail. This keyword
+was tested with hot water and ice and would fail this Test when outside range.
+Range can be adjusted via variables for low_range and high_range which are
+currently set to 18 and 30</doc>
+<arguments>
+<arg>${low_range} &lt; ${InformationList[0]} &lt; ${high_range}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>not(${expression})</arg>
+<arg>Fail</arg>
+<arg>Number does not match Expression pattern.</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:39.979" endtime="20190619 09:07:39.980"></status>
+</kw>
+<status status="PASS" starttime="20190619 09:07:39.977" endtime="20190619 09:07:39.980"></status>
+</kw>
+<status status="PASS" starttime="20190619 09:07:39.976" endtime="20190619 09:07:39.980"></status>
+</kw>
+<kw name="Stop" library="gdx">
+<doc>Stop data collection on the enabled sensors.</doc>
+<status status="PASS" starttime="20190619 09:07:39.981" endtime="20190619 09:07:40.007"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<msg timestamp="20190619 09:07:40.031" level="INFO">Disconnected from 90:FD:9F:FA:82:50</msg>
+<msg timestamp="20190619 09:07:40.032" level="INFO">Stopping</msg>
+<status status="PASS" starttime="20190619 09:07:40.009" endtime="20190619 09:07:40.045"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:29.563" endtime="20190619 09:07:40.047" critical="yes"></status>
+</test>
+<test id="s1-t9" name="ble_smoke_test_2_GDX_FOR">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify attempt to connect to a ble GDX-FOR Sensor</arg>
+</arguments>
+<msg timestamp="20190619 09:07:40.052" level="INFO">Verify attempt to connect to a ble GDX-FOR Sensor</msg>
+<status status="PASS" starttime="20190619 09:07:40.052" endtime="20190619 09:07:40.053"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_FOR}</arg>
+</arguments>
+<msg timestamp="20190619 09:07:40.055" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190619 09:07:40.055" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:40.143" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:40.398" level="INFO">Resetting and reconnecting to device for a clean environment</msg>
+<msg timestamp="20190619 09:07:40.401" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:40.486" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:40.737" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:41.073" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:41.411" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:41.498" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:41.754" level="INFO">Disabling advertising</msg>
+<msg timestamp="20190619 09:07:41.759" level="INFO">Starting an active scan</msg>
+<msg timestamp="20190619 09:07:41.760" level="INFO">Pausing for 5s to allow scan to complete</msg>
+<msg timestamp="20190619 09:07:46.761" level="INFO">Stopping scan</msg>
+<msg timestamp="20190619 09:07:46.811" level="INFO">Discovered 46 devices: [{'address': '00:0B:57:AE:30:CA', 'name': 'GDX-ACC 0H1015R5', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1015R5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '11:F5:CD:89:28:CF', 'name': '', 'rssi': -67, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\x99\x1e\xd00"\xbb\xec\xc0\tE-\xc4\x03\x1d\xc7\x81\x81W\xf8\x8e\x8c\x99\x80')}}}, {'address': '90:FD:9F:BD:7B:E6', 'name': 'GDX-GP 081014A2', 'rssi': -73, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 081014A2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:23:22', 'name': 'GDX-GP 08101007', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 08101007', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9A:A2', 'name': 'GDX-FOR 07100161', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100161', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '3E:54:3D:E4:D4:CB', 'name': '', 'rssi': -83, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\xd0(T\x1e\x88y\xb0\x0b\xbf}\xb93\x14+(\xfa\xc6m2o\\\xa1`')}}}, {'address': '00:0B:57:29:77:08', 'name': 'GDX-EA 06100017', 'rssi': -60, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-EA 06100017', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01061')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:2E:10:10', 'name': '', 'rssi': -73, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x05\xc0\xa8\xc0\xdd')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:43:AF', 'name': 'GDX-MD 0B1005W1', 'rssi': -86, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B1005W1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:76:26', 'name': 'GDX-SND 0T1000B5', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T1000B5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}, 'scan_response_packet': {}}}, {'address': '48:58:4E:52:CE:75', 'name': '', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x00\xe4\x06P\x1ar\xcd\xbb\xca\\\xfd2\x04\xfd')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:16:26', 'name': 'GDX-FOR 07100122', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100122', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '7E:85:E7:45:35:B8', 'name': '', 'rssi': -74, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x18l\xd6t')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:47:C5', 'name': 'GDX-CUR 0I1002H7', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I1002H7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:57:C2', 'name': 'GDX-LC 091003X7', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091003X7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:8A:F9', 'name': 'GDX-FOR 072002M1', 'rssi': -55, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002M1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:6A:15', 'name': 'GDX-COL 02100640', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-COL 02100640', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01021')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9C:45', 'name': 'GDX-FOR 071004J9', 'rssi': -72, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071004J9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:82:50', 'name': 'GDX-TMP 0F106831', 'rssi': -61, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F106831', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:A5:56:FB', 'name': 'GDX-SND 0T100002', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T100002', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:32:5C', 'name': 'GDX-TMP 0F1029T6', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1029T6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:32:DC', 'name': 'GDX-LC 091004A6', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004A6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F8:DF:B5', 'name': 'GDX-FOR 072002F9', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002F9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:66:1A', 'name': 'GDX-LC 091011L8', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091011L8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:0E:4B', 'name': 'GDX-TMP 0F1024D5', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024D5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:32:FF:67', 'name': '', 'rssi': -75, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x08\xc0\xa8\xc0+')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:41:A1:B9', 'name': 'GDX-MD 0B103437', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B103437', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:76:07', 'name': 'GDX-3MG 01100027', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-3MG 01100027', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01011')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:A5:5E:85', 'name': 'GDX-CUR 0I100134', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I100134', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '14:10:9F:E3:6B:A0', 'name': '', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x0b\x1c\xeb\xa6\\')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:12:AC:64', 'name': 'Mel_6 1.95', 'rssi': -55, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x10\x0b\xbc\x97\x1af\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_6 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '00:0B:57:4F:25:FB', 'name': 'GDX-RMS 0L1000G8', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-RMS 0L1000G8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010L1')}}}, {'address': '00:0B:57:35:13:BD', 'name': 'GDX-FOR 071000P2', 'rssi': -80, 'packet_data': {'discoverable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071000P2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '76:84:BB:35:41:44', 'name': '', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x13\x1c/\x92\x1c')}, 'scan_response_packet': {}}}, {'address': '44:FD:A6:3F:D3:85', 'name': '', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x07\x18\xa8a&lt;')}}}, {'address': '08:6B:D7:09:47:AE', 'name': 'GDX-TMP 0F1080L5', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1080L5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:53:06', 'name': 'GDX-LC 091004L0', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004L0', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:1F:39', 'name': 'GDX-TMP 0F1024B4', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024B4', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:96:2B', 'name': 'GDX-ACC 0H1020P8', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1020P8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '42:22:2D:6F:B6:8C', 'name': '', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x11\x18j\xc8\x1d')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:49:95', 'name': 'GDX-CON 03100018', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CON 03100018', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01031')}, 'scan_response_packet': {}}}, {'address': '73:10:65:58:62:F3', 'name': '', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x02\x07\x08')}, 'scan_response_packet': {}}}, {'address': '20:C3:8F:83:9B:FA', 'name': 'GWLdrbQ4', 'rssi': -64, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x01\x00\xe5\x8b\x86\x8b\x01\x00\x00\x00C\x01\x04')}, 'scan_response_packet': {'complete_local_name': 'GWLdrbQ4', 'slave_connection_interval_range': bytearray(b' \x00 \x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '90:59:AF:13:9F:A9', 'name': 'Mel_5 1.90', 'rssi': -67, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01&gt;\x0b\xd4\x8b\xeb1\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_5 1.90', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '38:F9:D3:D3:A0:3B', 'name': '', 'rssi': -90, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x1c\xac\xff\xc4')}}}, {'address': 'B0:34:95:34:49:EE', 'name': '', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x02\xc0\xa8\xc0\x02')}}}]</msg>
+<msg timestamp="20190619 09:07:46.812" level="INFO">Connecting to device at address 00:0B:57:2E:9C:45 (timeout 5s)</msg>
+<msg timestamp="20190619 09:07:46.916" level="INFO">Connection status: handle=0x0, flags=(69, 156, 46, 87, 11, 0), address=0xb'459c2e570b00', connection interval=57.500000ms, timeout=870, latency=11 intervals, bonding=0x0</msg>
+<msg timestamp="20190619 09:07:46.916" level="INFO">Connected to 00:0B:57:2E:9C:45</msg>
+<msg timestamp="20190619 09:07:46.917" level="INFO">Fetching characteristics for connection 0</msg>
+<msg timestamp="20190619 09:07:47.068" level="INFO">Found approved characteristic 00002a00-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:47.071" level="INFO">Found approved characteristic 00002a01-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:47.217" level="INFO">Found approved characteristic 00002a29-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:47.219" level="INFO">Found approved characteristic 00002a25-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:47.366" level="INFO">Found approved characteristic 00002a26-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:47.369" level="INFO">Found approved characteristic 00002a28-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:47.516" level="INFO">Found approved characteristic 00002a19-0000-1000-8000-00805f9b34fb</msg>
+<msg timestamp="20190619 09:07:47.666" level="INFO">Found custom characteristic f4bf14a6-c7d5-4b6d-8aa8-df1a7c83adcb</msg>
+<msg timestamp="20190619 09:07:48.041" level="INFO">Found custom characteristic b41e6675-a329-40e0-aa01-44d2f444babe</msg>
+<msg timestamp="20190619 09:07:48.341" level="INFO">Found custom characteristic 8e6f094a-5819-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:48.640" level="INFO">Found custom characteristic 9cea5308-59a9-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:49.015" level="INFO">Found custom characteristic cf052904-5d95-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:49.316" level="INFO">Found custom characteristic 248d6f39-5819-11e6-8b77-86f30ca893d3</msg>
+<msg timestamp="20190619 09:07:49.464" level="INFO">Characteristic 0x00002a00-0000-1000-8000-00805f9b34fb is handle 0x3</msg>
+<msg timestamp="20190619 09:07:49.465" level="INFO">Characteristic 0x00002a01-0000-1000-8000-00805f9b34fb is handle 0x5</msg>
+<msg timestamp="20190619 09:07:49.465" level="INFO">Characteristic 0x00002a29-0000-1000-8000-00805f9b34fb is handle 0x8</msg>
+<msg timestamp="20190619 09:07:49.465" level="INFO">Characteristic 0x00002a25-0000-1000-8000-00805f9b34fb is handle 0xa</msg>
+<msg timestamp="20190619 09:07:49.466" level="INFO">Characteristic 0x00002a26-0000-1000-8000-00805f9b34fb is handle 0xc</msg>
+<msg timestamp="20190619 09:07:49.466" level="INFO">Characteristic 0x00002a28-0000-1000-8000-00805f9b34fb is handle 0xe</msg>
+<msg timestamp="20190619 09:07:49.466" level="INFO">Characteristic 0x00002a19-0000-1000-8000-00805f9b34fb is handle 0x11</msg>
+<msg timestamp="20190619 09:07:49.466" level="INFO">Characteristic 0xf4bf14a6-c7d5-4b6d-8aa8-df1a7c83adcb is handle 0x14</msg>
+<msg timestamp="20190619 09:07:49.467" level="INFO">Characteristic 0xb41e6675-a329-40e0-aa01-44d2f444babe is handle 0x16</msg>
+<msg timestamp="20190619 09:07:49.467" level="INFO">Characteristic descriptor 0x00002902-0000-1000-8000-00805f9b34fb is handle 0x17</msg>
+<msg timestamp="20190619 09:07:49.467" level="INFO">Characteristic 0x8e6f094a-5819-11e6-8b77-86f30ca893d3 is handle 0x1a</msg>
+<msg timestamp="20190619 09:07:49.467" level="INFO">Characteristic 0x9cea5308-59a9-11e6-8b77-86f30ca893d3 is handle 0x1c</msg>
+<msg timestamp="20190619 09:07:49.468" level="INFO">Characteristic 0xcf052904-5d95-11e6-8b77-86f30ca893d3 is handle 0x1e</msg>
+<msg timestamp="20190619 09:07:49.468" level="INFO">Characteristic 0x248d6f39-5819-11e6-8b77-86f30ca893d3 is handle 0x20</msg>
+<msg timestamp="20190619 09:07:49.470" level="INFO">Subscribed to uuid=b41e6675-a329-40e0-aa01-44d2f444babe</msg>
+<msg timestamp="20190619 09:07:50.233" level="INFO">Connection status: handle=0x0, flags=(69, 156, 46, 87, 11, 0), address=0xb'459c2e570b00', connection interval=57.500000ms, timeout=870, latency=11 intervals, bonding=0x0</msg>
+<msg timestamp="20190619 09:07:50.253" level="INFO">Device status:</msg>
+<msg timestamp="20190619 09:07:50.253" level="INFO">  Status: 0</msg>
+<msg timestamp="20190619 09:07:50.254" level="INFO">  Master FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:50.254" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:50.254" level="INFO">  Battery percent: 100%</msg>
+<msg timestamp="20190619 09:07:50.254" level="INFO">  Charger state: 1</msg>
+<msg timestamp="20190619 09:07:50.286" level="INFO">Device info:</msg>
+<msg timestamp="20190619 09:07:50.286" level="INFO">  Description: Go Direct™ Force and Acceleration Sensor</msg>
+<msg timestamp="20190619 09:07:50.287" level="INFO">  Order code: GDX-FOR</msg>
+<msg timestamp="20190619 09:07:50.287" level="INFO">  Serial number: 071004J9</msg>
+<msg timestamp="20190619 09:07:50.287" level="INFO">  Device name: GDX-FOR 071004J9</msg>
+<msg timestamp="20190619 09:07:50.287" level="INFO">  Mfg ID: 8</msg>
+<msg timestamp="20190619 09:07:50.288" level="INFO">  Mfg Date: 7/1/2017</msg>
+<msg timestamp="20190619 09:07:50.288" level="INFO">  Master FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:50.288" level="INFO">  Slave FW version: 4.1.0</msg>
+<msg timestamp="20190619 09:07:50.288" level="INFO">  BLE address: 00:0b:57:2e:9c:45</msg>
+<msg timestamp="20190619 09:07:50.288" level="INFO">  NVRAM size: 8192bytes</msg>
+<msg timestamp="20190619 09:07:50.289" level="INFO">Wait for device to connect via ble...
+BLE device successfully opened =  True</msg>
+<status status="PASS" starttime="20190619 09:07:40.054" endtime="20190619 09:07:50.289"></status>
+</kw>
+<kw name="check_ble_force_sensor_KW">
+<doc>Fails keyword if specific Force Sensor not on correct USB Port</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:07:50.292" level="INFO">${InformationList} = ['GDX-FOR 071004J9', 'Go Direct™ Force and Acceleration Sensor', 100, 'Charging', -72]</msg>
+<status status="PASS" starttime="20190619 09:07:50.291" endtime="20190619 09:07:50.292"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${BLE_GDX_FOR}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:07:50.293" endtime="20190619 09:07:50.293"></status>
+</kw>
+<status status="PASS" starttime="20190619 09:07:50.290" endtime="20190619 09:07:50.294"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<msg timestamp="20190619 09:07:50.322" level="INFO">Disconnected from 00:0B:57:2E:9C:45</msg>
+<msg timestamp="20190619 09:07:50.322" level="INFO">Stopping</msg>
+<status status="PASS" starttime="20190619 09:07:50.295" endtime="20190619 09:07:50.327"></status>
+</kw>
+<tags>
+<tag>ble_smoke</tag>
+</tags>
+<status status="PASS" starttime="20190619 09:07:40.050" endtime="20190619 09:07:50.328" critical="yes"></status>
+</test>
+<test id="s1-t10" name="ble_sensor_info_GDX_FOR">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify Sensor Info of a GDX-FOR sensor can be gathered</arg>
+</arguments>
+<msg timestamp="20190619 09:07:50.336" level="INFO">Verify Sensor Info of a GDX-FOR sensor can be gathered</msg>
+<status status="PASS" starttime="20190619 09:07:50.335" endtime="20190619 09:07:50.336"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_FOR}</arg>
+</arguments>
+<msg timestamp="20190619 09:07:50.338" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190619 09:07:50.339" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:50.427" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:50.680" level="INFO">Resetting and reconnecting to device for a clean environment</msg>
+<msg timestamp="20190619 09:07:50.683" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:50.768" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:51.018" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:51.354" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:51.685" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:07:51.774" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:07:52.033" level="INFO">Disabling advertising</msg>
+<msg timestamp="20190619 09:07:52.037" level="INFO">Starting an active scan</msg>
+<msg timestamp="20190619 09:07:52.039" level="INFO">Pausing for 5s to allow scan to complete</msg>
+<msg timestamp="20190619 09:07:57.039" level="INFO">Stopping scan</msg>
+<msg timestamp="20190619 09:07:57.095" level="INFO">Discovered 49 devices: [{'address': '90:FD:9F:41:A1:B9', 'name': 'GDX-MD 0B103437', 'rssi': -75, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B103437', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9A:A2', 'name': 'GDX-FOR 07100161', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100161', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:77:08', 'name': 'GDX-EA 06100017', 'rssi': -71, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-EA 06100017', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01061')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:66:1A', 'name': 'GDX-LC 091011L8', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091011L8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '11:F5:CD:89:28:CF', 'name': '', 'rssi': -79, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\x99\x1e\xd00"\xbb\xec\xc0\tE-\xc4\x03\x1d\xc7\x81\x81W\xf8\x8e\x8c\x99\x80')}}}, {'address': '90:FD:9F:BD:6A:15', 'name': 'GDX-COL 02100640', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-COL 02100640', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01021')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:96:2B', 'name': 'GDX-ACC 0H1020P8', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1020P8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:7B:E6', 'name': 'GDX-GP 081014A2', 'rssi': -75, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 081014A2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:57:C2', 'name': 'GDX-LC 091003X7', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091003X7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:32:FF:67', 'name': '', 'rssi': -75, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x08\xc0\xa8\xc0+')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:0E:4B', 'name': 'GDX-TMP 0F1024D5', 'rssi': -66, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024D5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:49:95', 'name': 'GDX-CON 03100018', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CON 03100018', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01031')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:82:50', 'name': 'GDX-TMP 0F106831', 'rssi': -73, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F106831', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9C:45', 'name': 'GDX-FOR 071004J9', 'rssi': -69, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071004J9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:8A:F9', 'name': 'GDX-FOR 072002M1', 'rssi': -48, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002M1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '3E:54:3D:E4:D4:CB', 'name': '', 'rssi': -79, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\xd0(T\x1e\x88y\xb0\x0b\xbf}\xb93\x14+(\xfa\xc6m2o\\\xa1`')}}}, {'address': '48:58:4E:52:CE:75', 'name': '', 'rssi': -73, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x00\xe4\x06P\x1ar\xcd\xbb\xca\\\xfd2\x04\xfd')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:13:BD', 'name': 'GDX-FOR 071000P2', 'rssi': -84, 'packet_data': {'discoverable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071000P2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:47:C5', 'name': 'GDX-CUR 0I1002H7', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I1002H7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '42:22:2D:6F:B6:8C', 'name': '', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x11\x18j\xc8\x1d')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:76:26', 'name': 'GDX-SND 0T1000B5', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T1000B5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:AE:30:CA', 'name': 'GDX-ACC 0H1015R5', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1015R5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:23:22', 'name': 'GDX-GP 08101007', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 08101007', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '44:FD:A6:3F:D3:85', 'name': '', 'rssi': -90, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x07\x18\xa8a&lt;')}}}, {'address': '00:0B:57:4F:25:FB', 'name': 'GDX-RMS 0L1000G8', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-RMS 0L1000G8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010L1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:43:AF', 'name': 'GDX-MD 0B1005W1', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B1005W1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:32:DC', 'name': 'GDX-LC 091004A6', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004A6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F8:DF:B5', 'name': 'GDX-FOR 072002F9', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072002F9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:16:26', 'name': 'GDX-FOR 07100122', 'rssi': -78, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100122', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '48:DD:33:2C:80:22', 'name': '', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x13\x1c\x00\x0b;')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:34:49:EE', 'name': '', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x02\xc0\xa8\xc0\x02')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:A5:56:FB', 'name': 'GDX-SND 0T100002', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T100002', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}}}, {'address': '51:A5:CE:76:F4:D5', 'name': '', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x08\xbaQ\x84C\\\x9b\xb0B{U\x88\x89$')}, 'scan_response_packet': {}}}, {'address': '14:10:9F:E3:6B:A0', 'name': '', 'rssi': -71, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x0b\x1c\xeb\xa6\\')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:2E:10:10', 'name': '', 'rssi': -78, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x05\xc0\xa8\xc0\xdd')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:32:5C', 'name': 'GDX-TMP 0F1029T6', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1029T6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '20:C3:8F:83:9B:FA', 'name': 'GWLdrbQ4', 'rssi': -64, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\xff\x7f\x07\xb0\x86\x8b\x01\x00\x00\x00C\x01\x04')}, 'scan_response_packet': {'complete_local_name': 'GWLdrbQ4', 'slave_connection_interval_range': bytearray(b' \x00 \x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '08:6B:D7:09:47:AE', 'name': 'GDX-TMP 0F1080L5', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1080L5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:53:06', 'name': 'GDX-LC 091004L0', 'rssi': -89, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004L0', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}}}, {'address': '00:0B:57:4F:1F:39', 'name': 'GDX-TMP 0F1024B4', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024B4', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '7E:85:E7:45:35:B8', 'name': '', 'rssi': -64, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x18l\xd6t')}, 'scan_response_packet': {}}}, {'address': '73:10:65:58:62:F3', 'name': '', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x02\x07\x08')}, 'scan_response_packet': {}}}, {'address': '77:BE:56:F4:B3:77', 'name': '', 'rssi': -91, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x00\x97 \xa0H\xd9j\x0f\xfc\xdf\x8d\x1dl\x00')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:13:E8:01', 'name': 'Mel_2017_B 1.95', 'rssi': -67, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01@\x0b\xfc7\xb9\xe8\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_2017_B 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '00:0B:57:29:76:07', 'name': 'GDX-3MG 01100027', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-3MG 01100027', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01011')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:12:AC:64', 'name': 'Mel_6 1.95', 'rssi': -57, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x10\x0b\x9c\xc6\x1af\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_6 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '76:84:BB:35:41:44', 'name': '', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x13\x1c/\x92\x1c')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:A5:5E:85', 'name': 'GDX-CUR 0I100134', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I100134', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}}}, {'address': '90:59:AF:13:9F:A9', 'name': 'Mel_5 1.90', 'rssi': -67, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x016\x0b\xe4\xb2\xeb1\x03\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_5 1.90', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}]</msg>
+<msg timestamp="20190619 09:07:57.096" level="INFO">Connecting to device at address 00:0B:57:2E:9C:45 (timeout 5s)</msg>
+<msg timestamp="20190619 09:07:57.157" level="INFO">Connection status: handle=0x0, flags=(69, 156, 46, 87, 11, 0), address=0xb'459c2e570b00', connection interval=57.500000ms, timeout=870, latency=11 intervals, bonding=0x0</msg>
+<msg timestamp="20190619 09:07:57.158" level="INFO">Connected to 00:0B:57:2E:9C:45</msg>
+<msg timestamp="20190619 09:07:57.158" level="INFO">Fetching characteristics for connection 0</msg>
+<msg timestamp="20190619 09:08:07.213" level="INFO">Wait for device to connect via ble...</msg>
+<msg timestamp="20190619 09:08:07.220" level="FAIL">ExpectedResponseTimeout: Timed out after 10.000000s waiting for [&lt;EventPacketType.attclient_procedure_completed: 17&gt;]</msg>
+<status status="FAIL" starttime="20190619 09:07:50.337" endtime="20190619 09:08:07.220"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="FAIL" starttime="20190619 09:07:50.333" endtime="20190619 09:08:07.221" critical="yes">ExpectedResponseTimeout: Timed out after 10.000000s waiting for [&lt;EventPacketType.attclient_procedure_completed: 17&gt;]</status>
+</test>
+<test id="s1-t11" name="ble_get_a_sensor_list">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify users can get a list of available sensors and pick the first one</arg>
+</arguments>
+<msg timestamp="20190619 09:08:07.230" level="INFO">Verify users can get a list of available sensors and pick the first one</msg>
+<status status="PASS" starttime="20190619 09:08:07.229" endtime="20190619 09:08:07.230"></status>
+</kw>
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190619 09:08:07.232" endtime="20190619 09:08:07.234"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190619 09:08:07.236" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190619 09:08:07.236" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190619 09:08:07.325" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190619 09:08:07.575" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190619 09:08:07.575" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190619 09:08:07.235" endtime="20190619 09:08:07.575"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190619 09:08:07.578" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190619 09:08:07.577" endtime="20190619 09:08:07.578"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+</arguments>
+<msg timestamp="20190619 09:08:07.580" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190619 09:08:07.579" endtime="20190619 09:08:07.580"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="FAIL" starttime="20190619 09:08:07.227" endtime="20190619 09:08:07.581" critical="yes">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</status>
+</test>
+<status status="FAIL" starttime="20190619 09:07:08.783" endtime="20190619 09:08:07.595"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="2">Critical Tests</stat>
+<stat pass="9" fail="2">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="2">ble_functional</stat>
+<stat pass="2" fail="0">ble__smoke</stat>
+<stat pass="2" fail="0">usb_negative_test</stat>
+<stat pass="2" fail="0">usb_smoke</stat>
+</tag>
+<suite>
+<stat pass="9" fail="2" id="s1" name="GoDirectSuite1">GoDirectSuite1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projectConfiguration>
+    <configVersion>2</configVersion>
+    <relativeTo>WORKSPACE</relativeTo>
+    <referencedLibrary type="PYTHON" name="godirect" path="C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages"/>
+    <referencedLibrary type="PYTHON" name="pexpect" path="C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages"/>
+    <referencedLibrary type="PYTHON" name="serial" path="C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages"/>
+    <referencedLibrary type="PYTHON" name="pygatt" path="C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages"/>
+    <referencedLibrary type="PYTHON" name="pyautogui" path="C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages"/>
+    <referencedLibrary type="PYTHON" name="gdx" path="C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages/gdx.py"/>
+    <referencedLibrary type="PYTHON" name="usbportfeed" path="C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages/usbportfeed.py"/>
+    <referencedLibrary type="PYTHON" name="keyfeeder" path="C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages/keyfeeder.py"/>
+    <pythonpath/>
+    <classpath/>
+    <excludedForValidation/>
+    <isValidatedFileSizeCheckingEnabled>true</isValidatedFileSizeCheckingEnabled>
+    <validatedFileMaxSize>1024</validatedFileMaxSize>
+</projectConfiguration>

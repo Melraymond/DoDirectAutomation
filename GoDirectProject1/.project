@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>GoDirectProject1</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.robotframework.ide.eclipse.main.plugin.robotLibrariesBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.robotframework.ide.eclipse.main.plugin.robotNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>libspecs/Collections.py</name>
+			<type>1</type>
+			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/lib/site-packages/robot/libraries/Collections.py</location>
+		</link>
+		<link>
+			<name>libspecs/Easter.py</name>
+			<type>1</type>
+			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/lib/site-packages/robot/libraries/Easter.py</location>
+		</link>
+		<link>
+			<name>libspecs/args_f5997636.arg</name>
+			<type>1</type>
+			<location>C:/Users/Testlab/AppData/Local/Temp/RobotTempDir12013740256160928700/args_f5997636.arg</location>
+		</link>
+		<link>
+			<name>libspecs/godirect.py</name>
+			<type>1</type>
+			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages/godirect/__init__.py</location>
+		</link>
+		<link>
+			<name>libspecs/pygatt.py</name>
+			<type>1</type>
+			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages/pygatt/__init__.py</location>
+		</link>
+	</linkedResources>
+</projectDescription>

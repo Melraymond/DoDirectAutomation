@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190813 08:10:32.303" rpa="false">
+<suite id="s1" name="GoDirectSuite1" source="C:\Users\Testlab\Desktop\tools\eclipse_2019\GoDirectProject1\GDTest\GoDirectSuite1.robot">
+<test id="s1-t1" name="usb_smoke_test_1_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Smoke test verifies we can connect a USB GDX-TMP sensor</arg>
+</arguments>
+<msg timestamp="20190813 08:10:32.350" level="INFO">Smoke test verifies we can connect a USB GDX-TMP sensor</msg>
+<status status="PASS" starttime="20190813 08:10:32.350" endtime="20190813 08:10:32.350"></status>
+</kw>
+<kw name="Choose Usb" library="usbportfeed">
+<arguments>
+<arg>${port_1_gdx_tmp}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:32.350" endtime="20190813 08:10:32.350"></status>
+</kw>
+<kw name="Open Usb" library="gdx">
+<doc>Discovers the Go Direct device with a USB connection and opens that device 
+for data collection. If there are multiple devices discovered, a list of devices 
+is printed to the terminal with a prompt for the user to choose one.</doc>
+<msg timestamp="20190813 08:10:32.365" level="INFO">Number of usb devices found = 0
+No Go Direct Devices found on USB</msg>
+<status status="PASS" starttime="20190813 08:10:32.350" endtime="20190813 08:10:32.365"></status>
+</kw>
+<kw name="check_usb_temp_probe_KW">
+<doc>Fails keyword if specific Temperature Probe not on correct USB Port</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:32.365" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${USB_GDX-TMP}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:32.365" level="FAIL">TypeError: argument of type 'NoneType' is not iterable</msg>
+<status status="FAIL" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<tags>
+<tag>usb_smoke</tag>
+</tags>
+<status status="FAIL" starttime="20190813 08:10:32.350" endtime="20190813 08:10:32.365" critical="yes">TypeError: argument of type 'NoneType' is not iterable</status>
+</test>
+<test id="s1-t2" name="usb_smoke_test_2_GDX_FOR">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Smoke test verifies we can connect a USB GDX-FOR sensor</arg>
+</arguments>
+<msg timestamp="20190813 08:10:32.365" level="INFO">Smoke test verifies we can connect a USB GDX-FOR sensor</msg>
+<status status="PASS" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<kw name="Choose Usb" library="usbportfeed">
+<arguments>
+<arg>${port_2_gdx_for}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<kw name="Open Usb" library="gdx">
+<doc>Discovers the Go Direct device with a USB connection and opens that device 
+for data collection. If there are multiple devices discovered, a list of devices 
+is printed to the terminal with a prompt for the user to choose one.</doc>
+<msg timestamp="20190813 08:10:32.365" level="INFO">Number of usb devices found = 0
+No Go Direct Devices found on USB</msg>
+<status status="PASS" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<kw name="check_usb_force_sensor_KW">
+<doc>Fails keyword if specific Force sensor not on correct USB Port</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:32.365" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${USB_GDX-FOR}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:32.365" level="FAIL">TypeError: argument of type 'NoneType' is not iterable</msg>
+<status status="FAIL" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<tags>
+<tag>usb_smoke</tag>
+</tags>
+<status status="FAIL" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365" critical="yes">TypeError: argument of type 'NoneType' is not iterable</status>
+</test>
+<test id="s1-t3" name="usb_select_invalid_port_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify attempt to select usb port with no sensor on it</arg>
+</arguments>
+<msg timestamp="20190813 08:10:32.365" level="INFO">Verify attempt to select usb port with no sensor on it</msg>
+<status status="PASS" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.365"></status>
+</kw>
+<kw name="Choose Usb" library="usbportfeed">
+<arguments>
+<arg>${port_5_no_sensor}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Open Usb" library="gdx">
+<doc>Discovers the Go Direct device with a USB connection and opens that device 
+for data collection. If there are multiple devices discovered, a list of devices 
+is printed to the terminal with a prompt for the user to choose one.</doc>
+<msg timestamp="20190813 08:10:32.381" level="INFO">Number of usb devices found = 0
+No Go Direct Devices found on USB</msg>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:32.381" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${None}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<tags>
+<tag>usb_negative_test</tag>
+</tags>
+<status status="PASS" starttime="20190813 08:10:32.365" endtime="20190813 08:10:32.381" critical="yes"></status>
+</test>
+<test id="s1-t4" name="usb_select_bad_input_port_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify attempt to select usb port using a -1 as input</arg>
+</arguments>
+<msg timestamp="20190813 08:10:32.381" level="INFO">Verify attempt to select usb port using a -1 as input</msg>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Choose Usb" library="usbportfeed">
+<arguments>
+<arg>${port_negative_value}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Open Usb" library="gdx">
+<doc>Discovers the Go Direct device with a USB connection and opens that device 
+for data collection. If there are multiple devices discovered, a list of devices 
+is printed to the terminal with a prompt for the user to choose one.</doc>
+<msg timestamp="20190813 08:10:32.381" level="INFO">Number of usb devices found = 0
+No Go Direct Devices found on USB</msg>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:32.381" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${None}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<tags>
+<tag>usb_negative_test</tag>
+</tags>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381" critical="yes"></status>
+</test>
+<test id="s1-t5" name="ble_smoke_test_1_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify attempt to connect to a ble GDX-TMP Sensor</arg>
+</arguments>
+<msg timestamp="20190813 08:10:32.381" level="INFO">Verify attempt to connect to a ble GDX-TMP Sensor</msg>
+<status status="PASS" starttime="20190813 08:10:32.381" endtime="20190813 08:10:32.381"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:32.412" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:32.412" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:32.538" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:32.788" level="INFO">Resetting and reconnecting to device for a clean environment</msg>
+<msg timestamp="20190813 08:10:32.791" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:32.884" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:33.150" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:33.485" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:33.836" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:33.938" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:34.202" level="INFO">Disabling advertising</msg>
+<msg timestamp="20190813 08:10:34.202" level="INFO">Starting an active scan</msg>
+<msg timestamp="20190813 08:10:34.212" level="INFO">Pausing for 5s to allow scan to complete</msg>
+<msg timestamp="20190813 08:10:39.217" level="INFO">Stopping scan</msg>
+<msg timestamp="20190813 08:10:39.248" level="INFO">Discovered 56 devices: [{'address': 'B0:34:95:2E:10:10', 'name': '', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x02\xc0\xa8\xc0\xdd')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:57:C2', 'name': 'GDX-LC 091003X7', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091003X7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:2E:9C:45', 'name': 'GDX-FOR 071004J9', 'rssi': -61, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071004J9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:77:08', 'name': 'GDX-EA 06100017', 'rssi': -69, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-EA 06100017', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01061')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:82:50', 'name': 'GDX-TMP 0F106831', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F106831', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:67:40', 'name': 'GDX-3MG 01100056', 'rssi': -72, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-3MG 01100056', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01011')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:1E:D0', 'name': 'GDX-TMP 0F1024D1', 'rssi': -78, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024D1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:16:26', 'name': 'GDX-FOR 07100122', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-FOR 07100122', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '4E:E2:A5:28:AB:3E', 'name': '', 'rssi': -76, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x03\x18;\xbc\xce')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:25:FB', 'name': 'GDX-RMS 0L1000G8', 'rssi': -82, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-RMS 0L1000G8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010L1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:84:7A', 'name': 'GDX-TMP 0F1066S1', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1066S1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': 'D0:CF:5E:1E:83:35', 'name': 'GDX-ACC 0H1021H5', 'rssi': -70, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1021H5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:A5:56:FB', 'name': 'GDX-SND 0T100002', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T100002', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:32:5C', 'name': 'GDX-TMP 0F1029T6', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1029T6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '2B:DA:4A:5D:68:D0', 'name': '', 'rssi': -81, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\xdc\x9es\x99\xd9\x9a.\xaa\x1f\x120!\x8fB] \xd4`\xa7\xd3\x01@\xe0')}}}, {'address': '90:FD:9F:A5:5E:85', 'name': 'GDX-CUR 0I100134', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I100134', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:66:1A', 'name': 'GDX-LC 091011L8', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091011L8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:76:26', 'name': 'GDX-SND 0T1000B5', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-SND 0T1000B5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010T1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:29:76:07', 'name': 'GDX-3MG 01100027', 'rssi': -86, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-3MG 01100027', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01011')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:46:16:F3', 'name': 'GDX-COL 02100101', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-COL 02100101', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01021')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:B7:84:32', 'name': 'GDX-DC 051004Z6', 'rssi': -66, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-DC 051004Z6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01051')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:35:13:BD', 'name': 'GDX-FOR 071000P2', 'rssi': -85, 'packet_data': {'discoverable_advertisement_packet': {'complete_local_name': 'GDX-FOR 071000P2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01071')}, 'scan_response_packet': {}}}, {'address': '44:A2:DF:36:FC:DB', 'name': '', 'rssi': -83, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x07\x1c\xfa3\xaa')}, 'scan_response_packet': {}}}, {'address': '40:9F:EF:6B:0B:6A', 'name': '', 'rssi': -78, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x07\x18\xb0\xf7N')}, 'scan_response_packet': {}}}, {'address': 'B0:34:95:32:FF:67', 'name': '', 'rssi': -75, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\t\x06\x03\x02\xc0\xa8\xc0+')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:43:AF', 'name': 'GDX-MD 0B1005W1', 'rssi': -79, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B1005W1', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F9:1A:28', 'name': 'GDX-3MG 01100592', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-3MG 01100592', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01011')}, 'scan_response_packet': {}}}, {'address': '6C:EC:EB:48:50:59', 'name': 'QAdrb120soup', 'rssi': -84, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\xf4?b\x15\xe3O\x01\x00\x00\x00C\x01\x04')}, 'scan_response_packet': {'complete_local_name': 'QAdrb120soup', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '90:FD:9F:41:A1:B9', 'name': 'GDX-MD 0B103437', 'rssi': -78, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-MD 0B103437', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010B1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:82:67', 'name': 'GDX-TMP 0F1066N3', 'rssi': -78, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1066N3', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4F:1F:39', 'name': 'GDX-TMP 0F1024B4', 'rssi': -61, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1024B4', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6C:47:C5', 'name': 'GDX-CUR 0I1002H7', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-CUR 0I1002H7', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010I1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:FA:81:EB', 'name': 'GDX-TMP 0F1067K0', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F1067K0', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:41:67:B9', 'name': 'GDX-GP 081026R9', 'rssi': -80, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 081026R9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '0C:48:E8:13:48:90', 'name': '', 'rssi': -79, 'packet_data': {'non-connectable_advertisement_packet': {'manufacturer_specific_data': bytearray(b'\x06\x00\x01\t \x02\x1dZ\x08~\x12u/IU\xb76+q\x8eL\xa5-&lt;\x8c\xef\x1e\xb8I')}}}, {'address': '59:EA:78:66:99:4A', 'name': '', 'rssi': -71, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x07\x18V\x15\xb5')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:78:53:06', 'name': 'GDX-LC 091004L0', 'rssi': -88, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004L0', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:F6:96:2B', 'name': 'GDX-ACC 0H1020P8', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1020P8', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '90:FD:9F:BD:7B:E6', 'name': 'GDX-GP 081014A2', 'rssi': -76, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 081014A2', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:AE:30:CA', 'name': 'GDX-ACC 0H1015R5', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ACC 0H1015R5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010H1')}, 'scan_response_packet': {}}}, {'address': '53:63:49:37:32:6B', 'name': '', 'rssi': -57, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'tx_power_level': bytearray(b'\x0c'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x03\x18\xcae\x00')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:4E:93:F6', 'name': 'GDX-RMS 0L1000C5', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-RMS 0L1000C5', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010L1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:B4:73:7C', 'name': 'GDX-ISEA 0W1001F9', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-ISEA 0W1001F9', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010W1')}, 'scan_response_packet': {}}}, {'address': '00:0B:57:6D:23:22', 'name': 'GDX-GP 08101007', 'rssi': -81, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-GP 08101007', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01081')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:13:9F:A9', 'name': 'Mel_5 1.90', 'rssi': -74, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01&amp;\x0b\xfd\xce\x99H\x04\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_5 1.90', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '90:FD:9F:78:29:B4', 'name': 'GDX-TMP 0F101575', 'rssi': -87, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-TMP 0F101575', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010F1')}}}, {'address': '90:FD:9F:B8:9C:83', 'name': 'GDX-FOR 072000J0', 'rssi': -79, 'packet_data': {'discoverable_advertisement_packet': {'complete_local_name': 'GDX-FOR 072000J0', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01072')}, 'scan_response_packet': {}}}, {'address': '20:C3:8F:83:9B:FA', 'name': 'GWLdrbQ4', 'rssi': -65, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\xff\x7f\xd1\xe8\x13\xa4\x02\x00\x00\x00C\x01\x04')}, 'scan_response_packet': {'complete_local_name': 'GWLdrbQ4', 'slave_connection_interval_range': bytearray(b' \x00 \x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '90:FD:9F:BD:6A:15', 'name': 'GDX-COL 02100640', 'rssi': -86, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-COL 02100640', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01021')}, 'scan_response_packet': {}}}, {'address': '4D:EC:93:9B:CB:9A', 'name': '', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x18\xf9\xf0\xa0')}}}, {'address': '90:59:AF:13:E8:01', 'name': '', 'rssi': -74, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x010\x0b\xef\x15\x87\xfd\x04\x00\x00\x00?\x01\x00')}}}, {'address': '68:6E:9C:D4:32:4F', 'name': '', 'rssi': -77, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x1a'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x01\x18}\xb3\x1f')}, 'scan_response_packet': {}}}, {'address': '90:59:AF:12:AC:64', 'name': 'Mel_6 1.95', 'rssi': -63, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01\x10\x0b\x18\xa8\xc8w\x04\x00\x00\x00?\x01\x00')}, 'scan_response_packet': {'complete_local_name': 'Mel_6 1.95', 'slave_connection_interval_range': bytearray(b'(\x00P\x00'), 'tx_power_level': bytearray(b'\x00')}}}, {'address': '75:0C:24:74:6B:85', 'name': '', 'rssi': -90, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x0c\x0e\x00\xde\xb8u:\xc4?\xd2\x9c50\xf8)\xb3')}}}, {'address': '38:F9:D3:D3:A0:3B', 'name': '', 'rssi': -90, 'packet_data': {'connectable_advertisement_packet': {'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'L\x00\x10\x05\x0b\x1c\xa0\x95i')}}}, {'address': '00:0B:57:6D:32:DC', 'name': 'GDX-LC 091004A6', 'rssi': -85, 'packet_data': {'connectable_advertisement_packet': {'complete_local_name': 'GDX-LC 091004A6', 'flags': bytearray(b'\x06'), 'manufacturer_specific_data': bytearray(b'R\x01091')}}}]</msg>
+<msg timestamp="20190813 08:10:39.263" level="INFO">Connecting to device at address 90:FD:9F:FA:82:50 (timeout 5s)</msg>
+<msg timestamp="20190813 08:10:39.349" level="INFO">Connection status: handle=0x0, flags=(80, 130, 250, 159, 253, 144), address=0xb'5082fa9ffd90', connection interval=312.500000ms, timeout=1590, latency=253 intervals, bonding=0x90</msg>
+<msg timestamp="20190813 08:10:39.349" level="INFO">Connected to 90:FD:9F:FA:82:50</msg>
+<msg timestamp="20190813 08:10:39.349" level="INFO">Fetching characteristics for connection 0</msg>
+<msg timestamp="20190813 08:10:49.455" level="INFO">Wait for device to connect via ble...</msg>
+<msg timestamp="20190813 08:10:49.548" level="FAIL">ExpectedResponseTimeout: Timed out after 10.000000s waiting for [&lt;EventPacketType.attclient_procedure_completed: 17&gt;]</msg>
+<status status="FAIL" starttime="20190813 08:10:32.381" endtime="20190813 08:10:49.548"></status>
+</kw>
+<tags>
+<tag>ble__smoke</tag>
+</tags>
+<status status="FAIL" starttime="20190813 08:10:32.381" endtime="20190813 08:10:49.548" critical="yes">ExpectedResponseTimeout: Timed out after 10.000000s waiting for [&lt;EventPacketType.attclient_procedure_completed: 17&gt;]</status>
+</test>
+<test id="s1-t6" name="ble_sensor_info_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify Sensor Info of a GDX-TMP probe can be gathered</arg>
+</arguments>
+<msg timestamp="20190813 08:10:49.548" level="INFO">Verify Sensor Info of a GDX-TMP probe can be gathered</msg>
+<status status="PASS" starttime="20190813 08:10:49.548" endtime="20190813 08:10:49.548"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:49.548" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:49.548" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:49.642" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:49.892" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:49.892" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:49.548" endtime="20190813 08:10:49.892"></status>
+</kw>
+<kw name="check_ble_temp_probe_KW">
+<doc>Fails keyword if specific blutooth Temperature Probe not found</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:49.892" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:49.892" endtime="20190813 08:10:49.892"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:49.892" level="FAIL">TypeError: argument of type 'NoneType' is not iterable</msg>
+<status status="FAIL" starttime="20190813 08:10:49.892" endtime="20190813 08:10:49.892"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:49.892" endtime="20190813 08:10:49.892"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="FAIL" starttime="20190813 08:10:49.548" endtime="20190813 08:10:49.892" critical="yes">TypeError: argument of type 'NoneType' is not iterable</status>
+</test>
+<test id="s1-t7" name="ble_sensor_start_with_no_device_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify proper return condition from start function if no device was selected</arg>
+</arguments>
+<msg timestamp="20190813 08:10:49.908" level="INFO">Verify proper return condition from start function if no device was selected</msg>
+<status status="PASS" starttime="20190813 08:10:49.892" endtime="20190813 08:10:49.908"></status>
+</kw>
+<kw name="Start" library="gdx">
+<doc>Enables the sensors that were selected in the select_sensors() function  
+and then starts data collection. </doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${grab_return}</var>
+</assign>
+<msg timestamp="20190813 08:10:49.908" level="INFO">${grab_return} = None</msg>
+<status status="PASS" starttime="20190813 08:10:49.908" endtime="20190813 08:10:49.908"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${grab_return}</arg>
+<arg>${None}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:49.908" endtime="20190813 08:10:49.908"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="PASS" starttime="20190813 08:10:49.892" endtime="20190813 08:10:49.908" critical="yes"></status>
+</test>
+<test id="s1-t8" name="ble_sensor_data_collection_GDX_TMP">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify we can collect a short 2 samples per second run with gdx-temp</arg>
+</arguments>
+<msg timestamp="20190813 08:10:49.908" level="INFO">Verify we can collect a short 2 samples per second run with gdx-temp</msg>
+<status status="PASS" starttime="20190813 08:10:49.908" endtime="20190813 08:10:49.908"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_TMP}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:49.923" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:49.923" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:50.017" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:50.274" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:50.274" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:49.908" endtime="20190813 08:10:50.274"></status>
+</kw>
+<kw name="Start" library="gdx">
+<doc>Enables the sensors that were selected in the select_sensors() function  
+and then starts data collection. </doc>
+<arguments>
+<arg>2000</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:50.275" endtime="20190813 08:10:50.275"></status>
+</kw>
+<kw name="Read" library="gdx">
+<doc>Once the start() function has been called, the device will begin sending data  
+at the specified period. You must call read at least as fast as the period, e.g. once  
+per second for a period of 1000 (ms). The collected data will be added to a value list  
+for each enabled sensor. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:50.275" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:50.275" endtime="20190813 08:10:50.275"></status>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<arguments>
+<arg>Should Be X Than Y</arg>
+<arg>${low_range} &lt; ${InformationList[0]} &lt; ${high_range}</arg>
+</arguments>
+<kw name="Should Be X Than Y">
+<doc>Checking values within a set range gives reasonable knowledge
+we PASS the test. Anything above or below this range will fail. This keyword
+was tested with hot water and ice and would fail this Test when outside range.
+Range can be adjusted via variables for low_range and high_range which are
+currently set to 18 and 30 variables</doc>
+<arguments>
+<arg>${low_range} &lt; ${InformationList[0]} &lt; ${high_range}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:50.275" level="FAIL">Resolving variable '${InformationList[0]}' failed: TypeError: 'NoneType' object is not subscriptable</msg>
+<status status="FAIL" starttime="20190813 08:10:50.275" endtime="20190813 08:10:50.275"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:50.275" endtime="20190813 08:10:50.275"></status>
+</kw>
+<kw name="Stop" library="gdx">
+<doc>Stop data collection on the enabled sensors.</doc>
+<status status="PASS" starttime="20190813 08:10:50.275" endtime="20190813 08:10:50.275"></status>
+</kw>
+<kw name="Close" library="gdx">
+<doc>Disconnect the USB or BLE device if a device is open.</doc>
+<status status="PASS" starttime="20190813 08:10:50.275" endtime="20190813 08:10:50.275"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="FAIL" starttime="20190813 08:10:49.908" endtime="20190813 08:10:50.275" critical="yes">Resolving variable '${InformationList[0]}' failed: TypeError: 'NoneType' object is not subscriptable</status>
+</test>
+<test id="s1-t9" name="ble_smoke_test_2_GDX_FOR">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify attempt to connect to a ble GDX-FOR Sensor</arg>
+</arguments>
+<msg timestamp="20190813 08:10:50.290" level="INFO">Verify attempt to connect to a ble GDX-FOR Sensor</msg>
+<status status="PASS" starttime="20190813 08:10:50.290" endtime="20190813 08:10:50.290"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_FOR}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:50.290" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:50.290" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:50.384" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:50.634" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:50.634" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:50.290" endtime="20190813 08:10:50.634"></status>
+</kw>
+<kw name="check_ble_force_sensor_KW">
+<doc>Fails keyword if specific blutooth Force Sensor not found</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:50.634" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:50.634" endtime="20190813 08:10:50.634"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${BLE_GDX_FOR}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:50.634" level="FAIL">TypeError: argument of type 'NoneType' is not iterable</msg>
+<status status="FAIL" starttime="20190813 08:10:50.634" endtime="20190813 08:10:50.634"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:50.634" endtime="20190813 08:10:50.634"></status>
+</kw>
+<tags>
+<tag>ble_smoke</tag>
+</tags>
+<status status="FAIL" starttime="20190813 08:10:50.290" endtime="20190813 08:10:50.634" critical="yes">TypeError: argument of type 'NoneType' is not iterable</status>
+</test>
+<test id="s1-t10" name="ble_sensor_info_GDX_FOR">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify Sensor Info of a GDX-FOR sensor can be gathered</arg>
+</arguments>
+<msg timestamp="20190813 08:10:50.634" level="INFO">Verify Sensor Info of a GDX-FOR sensor can be gathered</msg>
+<status status="PASS" starttime="20190813 08:10:50.634" endtime="20190813 08:10:50.634"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<arguments>
+<arg>${BLE_GDX_FOR}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:50.650" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:50.650" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:50.744" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:51.000" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:51.000" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:50.650" endtime="20190813 08:10:51.000"></status>
+</kw>
+<kw name="check_ble_force_sensor_KW">
+<doc>Fails keyword if specific blutooth Force Sensor not found</doc>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:51.000" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:51.000" endtime="20190813 08:10:51.000"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${InformationList}</arg>
+<arg>${BLE_GDX_FOR}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:51.000" level="FAIL">TypeError: argument of type 'NoneType' is not iterable</msg>
+<status status="FAIL" starttime="20190813 08:10:51.000" endtime="20190813 08:10:51.000"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:51.000" endtime="20190813 08:10:51.000"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="FAIL" starttime="20190813 08:10:50.634" endtime="20190813 08:10:51.000" critical="yes">TypeError: argument of type 'NoneType' is not iterable</status>
+</test>
+<test id="s1-t11" name="ble_get_a_sensor_list">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Verify users can get a list of available sensors and pick the first one</arg>
+</arguments>
+<msg timestamp="20190813 08:10:51.000" level="INFO">Verify users can get a list of available sensors and pick the first one</msg>
+<status status="PASS" starttime="20190813 08:10:51.000" endtime="20190813 08:10:51.000"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>recycle_open_ble</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:51.015" endtime="20190813 08:10:51.015"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:10:51.015" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:51.015" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:51.109" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:51.359" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:51.359" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:51.015" endtime="20190813 08:10:51.359"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:51.359" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:51.359" endtime="20190813 08:10:51.359"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:51.359" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:10:51.359" endtime="20190813 08:10:51.359"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:51.015" endtime="20190813 08:10:51.359"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:52.375" endtime="20190813 08:10:52.375"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:10:52.375" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:52.375" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:52.463" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:52.713" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:52.713" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:52.375" endtime="20190813 08:10:52.713"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:52.713" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:52.713" endtime="20190813 08:10:52.713"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:52.713" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:10:52.713" endtime="20190813 08:10:52.713"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:52.375" endtime="20190813 08:10:52.713"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:53.728" endtime="20190813 08:10:53.728"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:10:53.728" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:53.728" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:53.822" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:54.088" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:54.088" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:53.728" endtime="20190813 08:10:54.088"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:54.088" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:54.088" endtime="20190813 08:10:54.088"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:54.088" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:10:54.088" endtime="20190813 08:10:54.088"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:53.728" endtime="20190813 08:10:54.088"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:55.088" endtime="20190813 08:10:55.088"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:10:55.088" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:55.088" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:55.181" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:55.447" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:55.447" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:55.088" endtime="20190813 08:10:55.447"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:55.447" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:55.447" endtime="20190813 08:10:55.447"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:55.447" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:10:55.447" endtime="20190813 08:10:55.447"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:55.088" endtime="20190813 08:10:55.447"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:56.463" endtime="20190813 08:10:56.463"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:10:56.463" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:56.463" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:56.556" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:56.806" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:56.806" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:56.463" endtime="20190813 08:10:56.806"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:56.806" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:56.806" endtime="20190813 08:10:56.806"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:56.806" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:10:56.806" endtime="20190813 08:10:56.806"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:56.463" endtime="20190813 08:10:56.806"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:57.822" endtime="20190813 08:10:57.822"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:10:57.822" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:57.822" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:57.911" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:58.173" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:58.173" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:57.822" endtime="20190813 08:10:58.173"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:58.173" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:58.173" endtime="20190813 08:10:58.173"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:58.173" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:10:58.173" endtime="20190813 08:10:58.173"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:57.822" endtime="20190813 08:10:58.173"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:10:59.189" endtime="20190813 08:10:59.189"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:10:59.189" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:10:59.189" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:10:59.283" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:10:59.539" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:10:59.539" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:10:59.189" endtime="20190813 08:10:59.539"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:10:59.539" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:10:59.539" endtime="20190813 08:10:59.539"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:10:59.539" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:10:59.539" endtime="20190813 08:10:59.539"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:10:59.189" endtime="20190813 08:10:59.539"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:11:00.555" endtime="20190813 08:11:00.555"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:11:00.555" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:11:00.555" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:11:00.646" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:11:00.896" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:11:00.896" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:11:00.555" endtime="20190813 08:11:00.896"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:11:00.896" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:11:00.896" endtime="20190813 08:11:00.896"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:11:00.896" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:11:00.896" endtime="20190813 08:11:00.896"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:11:00.555" endtime="20190813 08:11:00.896"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:11:01.896" endtime="20190813 08:11:01.896"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:11:01.896" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:11:01.896" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:11:01.997" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:11:02.247" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:11:02.247" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:11:01.896" endtime="20190813 08:11:02.247"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:11:02.247" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:11:02.247" endtime="20190813 08:11:02.247"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:11:02.247" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:11:02.247" endtime="20190813 08:11:02.247"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:11:01.896" endtime="20190813 08:11:02.247"></status>
+</kw>
+<kw name="recycle_open_ble">
+<kw name="Send Some Keys" library="keyfeeder">
+<arguments>
+<arg>${PICKLIST_SENSOR_1}</arg>
+</arguments>
+<status status="PASS" starttime="20190813 08:11:03.247" endtime="20190813 08:11:03.247"></status>
+</kw>
+<kw name="Open Ble" library="gdx">
+<doc>Open a Go Direct device via bluetooth for data collection.  </doc>
+<msg timestamp="20190813 08:11:03.247" level="INFO">Initialized new BGAPI backend</msg>
+<msg timestamp="20190813 08:11:03.247" level="INFO">Auto-detecting serial port for BLED112</msg>
+<msg timestamp="20190813 08:11:03.348" level="INFO">Found BLED112 on serial port COM3</msg>
+<msg timestamp="20190813 08:11:03.598" level="INFO">No Bluegiga BGAPI adapter detected.</msg>
+<msg timestamp="20190813 08:11:03.598" level="INFO">Wait for device to connect via ble...
+No Go Direct Devices Found on Bluetooth</msg>
+<status status="PASS" starttime="20190813 08:11:03.247" endtime="20190813 08:11:03.598"></status>
+</kw>
+<kw name="Device Info" library="gdx">
+<doc>Returns information about the device. The device must be opened first,  
+using the open() function, before this function can be called. </doc>
+<assign>
+<var>${InformationList}</var>
+</assign>
+<msg timestamp="20190813 08:11:03.598" level="INFO">${InformationList} = None</msg>
+<status status="PASS" starttime="20190813 08:11:03.598" endtime="20190813 08:11:03.598"></status>
+</kw>
+<kw name="Should Not Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<arguments>
+<arg>${InformationList}[0]</arg>
+<arg>${None}</arg>
+</arguments>
+<msg timestamp="20190813 08:11:03.598" level="FAIL">Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:11:03.598" endtime="20190813 08:11:03.598"></status>
+</kw>
+<status status="FAIL" starttime="20190813 08:11:03.247" endtime="20190813 08:11:03.598"></status>
+</kw>
+<msg timestamp="20190813 08:11:03.598" level="FAIL">Keyword 'recycle_open_ble' failed after retrying 10 times. The last error was: Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</msg>
+<status status="FAIL" starttime="20190813 08:10:51.015" endtime="20190813 08:11:03.598"></status>
+</kw>
+<tags>
+<tag>ble_functional</tag>
+</tags>
+<status status="FAIL" starttime="20190813 08:10:51.000" endtime="20190813 08:11:03.598" critical="yes">Keyword 'recycle_open_ble' failed after retrying 10 times. The last error was: Variable '${InformationList}' is None, not list or dictionary, and thus accessing item '0' from it is not possible.</status>
+</test>
+<status status="FAIL" starttime="20190813 08:10:32.303" endtime="20190813 08:11:03.598"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="8">Critical Tests</stat>
+<stat pass="3" fail="8">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="4">ble_functional</stat>
+<stat pass="0" fail="2">ble__smoke</stat>
+<stat pass="2" fail="0">usb_negative_test</stat>
+<stat pass="0" fail="2">usb_smoke</stat>
+</tag>
+<suite>
+<stat pass="3" fail="8" id="s1" name="GoDirectSuite1">GoDirectSuite1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
