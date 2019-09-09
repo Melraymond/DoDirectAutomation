@@ -26,9 +26,19 @@
 			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/lib/site-packages/robot/libraries/Easter.py</location>
 		</link>
 		<link>
+			<name>libspecs/Process.py</name>
+			<type>1</type>
+			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/lib/site-packages/robot/libraries/Process.py</location>
+		</link>
+		<link>
 			<name>libspecs/args_f5997636.arg</name>
 			<type>1</type>
 			<location>C:/Users/Testlab/AppData/Local/Temp/RobotTempDir12013740256160928700/args_f5997636.arg</location>
+		</link>
+		<link>
+			<name>libspecs/gdx.py</name>
+			<type>1</type>
+			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/lib/site-packages/gdx.py</location>
 		</link>
 		<link>
 			<name>libspecs/godirect.py</name>
@@ -39,6 +49,11 @@
 			<name>libspecs/pygatt.py</name>
 			<type>1</type>
 			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages/pygatt/__init__.py</location>
+		</link>
+		<link>
+			<name>libspecs/usbportfeed.py</name>
+			<type>1</type>
+			<location>C:/Users/Testlab/AppData/Local/Programs/Python/Python37/Lib/site-packages/usbportfeed.py</location>
 		</link>
 	</linkedResources>
 </projectDescription>

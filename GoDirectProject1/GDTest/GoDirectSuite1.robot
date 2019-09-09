@@ -112,6 +112,7 @@ ble_smoke_test_1_GDX_TMP
     Open Ble    ${BLE_GDX_TMP}
     check_ble_temp_probe_KW
     close
+#    Sleep    3
     
 ble_sensor_info_GDX_TMP
     [Tags]    ble_functional
@@ -125,12 +126,14 @@ ble_sensor_info_GDX_TMP
     Should Contain    ${flat}    ${Unit°C}   
     Should Contain    ${flat}    ${TEMPERATURE}
     close
+#    Sleep    3
     
 ble_sensor_start_with_no_device_GDX_TMP
     [Tags]    ble_functional
     Log    Verify proper return condition from start function if no device was selected
     ${grab_return}    Start    2
-    Should Be Equal As Strings    ${grab_return}    ${None} 
+    Should Be Equal As Strings    ${grab_return}    ${None}
+#    Sleep    3
 
 ble_sensor_data_collection_GDX_TMP
     [Tags]    ble_functional
@@ -141,13 +144,15 @@ ble_sensor_data_collection_GDX_TMP
     Run Keyword and Continue on Failure    Should Be X Than Y   ${low_range} < ${InformationList[0]} < ${high_range}      
     stop
     close
+    Sleep    3
 
 ble_smoke_test_2_GDX_FOR
     [Tags]    ble_smoke
     Log    Verify attempt to connect to a ble GDX-FOR Sensor
-    Open BLe   ${BLE_GDX_FOR}
+    Open BLe   ${BLE_GDX_FOR}    bg=True
     check_ble_force_sensor_KW
     close
+#    Sleep    3
  
  # yellow_sensor
     # Open Ble    ${YELLOW}
@@ -167,13 +172,18 @@ ble_sensor_info_GDX_FOR
     Should Contain    ${flat}    ${FORCE}   
     Should Contain    ${flat}    ${UNIT_N}
     close
+#    Sleep    3
 
-ble_get_a_sensor_list
+
+ ble_get_a_sensor_list
     [Tags]    ble_functional
     Log    Verify users can get a list of available sensors and pick the first one
-    ${result} =	Wait Until Keyword Succeeds	10x	1s	recycle_open_ble
+#    ${result} =	Wait Until Keyword Succeeds	10x	1s	recycle_open_ble
+    keyfeeder.Send Some Keys    ${PICKLIST_SENSOR_1}
+    Open Ble   
     ${InformationList}    device info    
     Log    ${InformationList}[0]
+    Should Not Be Equal As Strings    ${InformationList}[0]    ${None}
     close
 
        
